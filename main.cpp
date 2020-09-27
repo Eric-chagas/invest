@@ -110,6 +110,27 @@ int main()
         cout << "codigo: " << co1.getCodigo() << endl;
     }
     */
+
+    //TESTE CLASSE CPF
+
+    Cpf c1;
+    string a = "-1";
+
+    while(a.compare("0") != 0){
+        cout << "insira a: ";
+        cin >> a;
+
+        try {
+            c1.setCpf(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "cpf: " << c1.getCpf() << endl;
+    }
+
     return 0;
 
 }

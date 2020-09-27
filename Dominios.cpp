@@ -3,7 +3,6 @@
 #include <stdexcept>
 #include <string>
 
-using namespace std;
 
 //Lembrar de acrescentar os comentarios doxygen.
 
@@ -16,7 +15,7 @@ void Cep::validar(int cep){
           || (cep >= MIN_DF && cep <= MAX_DF)
           || (cep >= MIN_SSA && cep <= MAX_SSA)
           || (cep >= MIN_FOR && cep <= MAX_FOR))){
-                throw invalid_argument("Cep invalido.");
+                throw std::invalid_argument("Cep invalido.");
           }
 }
 void Cep::setCep(int cep){
@@ -43,7 +42,7 @@ void Classe::validar(std::string classe){
         && classe.compare(VALOR_3) != 0
         && classe.compare(VALOR_4) != 0
         && classe.compare(VALOR_5) != 0){
-            throw invalid_argument("Classe invalida.");
+            throw std::invalid_argument("Classe invalida.");
         }
 }
 void Classe::setClasse(std::string classe){
@@ -64,13 +63,13 @@ void Codigo_Agencia::validarDigitos(std::string codigo){
     int i;
     for(i = 0; i < codigo.length(); i++){
         if ((int)codigo[i] < 48 || (int)codigo[i] > 57){
-            throw invalid_argument("Codigo de Agencia invalido.");
+            throw std::invalid_argument("Codigo de Agencia invalido.");
         }
     }
 }
 void Codigo_Agencia::validar(std::string codigo){
     if (codigo.length() != 4 || codigo.compare(COD_INVALIDO) == 0){
-        throw invalid_argument("Codigo de Agencia invalido.");
+        throw std::invalid_argument("Codigo de Agencia invalido.");
     }
     else{
         validarDigitos(codigo);
@@ -94,13 +93,13 @@ void Codigo_Aplicacao::validarDigitos(std::string codigo){
     int i;
     for(i = 0; i < codigo.length(); i++){
         if ((int)codigo[i] < 48 || (int)codigo[i] > 57){
-            throw invalid_argument("Codigo de Aplicacao invalido.");
+            throw std::invalid_argument("Codigo de Aplicacao invalido.");
         }
     }
 }
 void Codigo_Aplicacao::validar(std::string codigo){
     if (codigo.length() != 5 || codigo.compare(COD_INVALIDO) == 0) {
-        throw invalid_argument("Codigo de Aplicacao invalido.");
+        throw std::invalid_argument("Codigo de Aplicacao invalido.");
     }
     else{
         validarDigitos(codigo);
@@ -130,7 +129,7 @@ void Codigo_Banco::validar(std::string codigo){
        && codigo.compare(COD_BRADESCO) != 0
        && codigo.compare(COD_CAIXA) != 0
        && codigo.compare(COD_SANTANDER) != 0){
-            throw invalid_argument("Codigo de Banco invalido.");
+            throw std::invalid_argument("Codigo de Banco invalido.");
        }
 }
 void Codigo_Banco::setCodigo(std::string codigo){
@@ -151,13 +150,13 @@ void Codigo_Produto::validarDigitos(std::string codigo){
     int i;
     for(i = 0; i < codigo.length(); i++){
         if ((int)codigo[i] < 48 || (int)codigo[i] > 57){
-            throw invalid_argument("Codigo de Produto invalido.");
+            throw std::invalid_argument("Codigo de Produto invalido.");
         }
     }
 }
 void Codigo_Produto::validar(std::string codigo){
     if (codigo.length() != 3 || codigo.compare(COD_INVALIDO) == 0) {
-        throw invalid_argument("Codigo de Produto invalido.");
+        throw std::invalid_argument("Codigo de Produto invalido.");
     }
     else{
         validarDigitos(codigo);
@@ -172,4 +171,88 @@ std::string Codigo_Produto::getCodigo(){
 }
 
 
+//Classe CPF
 
+
+//Algoritmo que valida o CPF com base nos 2 digitos verificadores;
+//*0. Se todos os digitos forem iguais, o CPF e invalido.
+//1. Multiplica-se os 9 primeiros digitos do CPF em sequencia por 10, 9, 8, 7, 6, 5, 4, 3 e 2 respectivamente;
+//2. Somam-se os resultados das multiplicacoes anteriores
+//3. Multiplica-se a soma por 10 e divide-se o resultado por 11, e o resto dessa divisao deve corresponder ao primeiro digito.
+//OBS: se o resto da divisao for 10, o digito devera ser 0.
+//4. Repie-se o mesmo processo, porem acrescentando o primeiro digito verificador aos primeiros 9 digitos do CPF
+//e o numero 11 na primeira multiplicacao em sequencia.
+//5. o resltado agora deve corresponder ao segundo digito verificador
+
+void Cpf::validarCpf(std::string cpf){
+    if (cpf[0] == cpf[1]
+        && cpf[1] == cpf[2]
+        && cpf[2] == cpf[4]
+        && cpf[4] == cpf[5]
+        && cpf[5] == cpf[6]
+        && cpf[6] == cpf[8]
+        && cpf[8] == cpf[9]
+        && cpf[9] == cpf[10]){
+            throw std::invalid_argument("CPF invalido.");
+    }
+    else{
+        int soma, resto, cpf1, cpf2, cpf3, cpf4, cpf5, cpf6, cpf7, cpf8, cpf9, digito1, digito2;
+
+        cpf1 = (int)cpf[0] - 48;
+        cpf2 = (int)cpf[1] - 48;
+        cpf3 = (int)cpf[2] - 48;
+        cpf4 = (int)cpf[4] - 48;
+        cpf5 = (int)cpf[5] - 48;
+        cpf6 = (int)cpf[6] - 48;
+        cpf7 = (int)cpf[8] - 48;
+        cpf8 = (int)cpf[9] - 48;
+        cpf9 = (int)cpf[10] - 48;
+        digito1 = (int)cpf[12] - 48;
+        digito2 = (int)cpf[13] - 48;
+
+        //Verificacao do primeiro digito
+
+        soma = cpf1*10 + cpf2*9 + cpf3*8 + cpf4*7 + cpf5*6 + cpf6*5 + cpf7*4 + cpf8*3 + cpf9*2;
+        resto = (soma*10)%11;
+
+        //std::cout << "soma: " << soma << std::endl << "resto: " << resto << std::endl << "digito1: " << digito1 << std::endl;
+
+        if(resto == 10){
+            resto = 0;
+            if(digito1 != resto){
+                throw std::invalid_argument("CPF invalido.");
+            }
+        }
+        else{
+            if(digito1 != resto){
+                throw std::invalid_argument("CPF invalido.");
+            }
+        }
+
+        //Verificacao do segundo digito
+        //soma = 0, resto = 0;
+        soma = cpf1*11 + cpf2*10 + cpf3*9 + cpf4*8 + cpf5*7 + cpf6*6 + cpf7*5 + cpf8*4 + cpf9*3 + digito1*2;
+        resto = (soma*10)%11;
+
+        //std::cout << "soma: " << soma << std::endl << "resto: " << resto << std::endl << "digito2: " << digito2 << std::endl;
+
+        if(resto == 10){
+            resto = 0;
+            if(digito2 != resto){
+                throw std::invalid_argument("CPF invalido.");
+            }
+        }
+        else{
+            if(digito2 != resto){
+                throw std::invalid_argument("CPF invalido.");
+            }
+        }
+    }
+}
+void Cpf::setCpf(std::string cpf){
+    validarCpf(cpf);
+    this->cpf = cpf;
+}
+std::string Cpf::getCpf(){
+    return this->cpf;
+}

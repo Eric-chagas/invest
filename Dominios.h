@@ -123,7 +123,18 @@ public:
         std::string getCodigo();
 };
 
+//Classe CPF
 
+class Cpf {
+private:
+        //CPF, no formato: (XXX.XXX.XXX-XX)
+        std::string cpf;
+        //Metodo que consiste em um algoritmo de validacao dos 2 digitos verificadores do CPF.
+        void validarCpf(std::string);
+public:
+        void setCpf(std::string);
+        std::string getCpf();
+};
 
 
 #endif // DOMINIOS_H_INCLUDED
