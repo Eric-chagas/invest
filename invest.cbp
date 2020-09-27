@@ -32,13 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Dominios.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Dominios.cpp" />
 		<Unit filename="Dominios.h">
 			<Option compile="1" />
-			<Option link="1" />
-			<Option target="&lt;{~None~}&gt;" />
+			<Option weight="0" />
 		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions />
