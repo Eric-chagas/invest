@@ -256,3 +256,125 @@ void Cpf::setCpf(std::string cpf){
 std::string Cpf::getCpf(){
     return this->cpf;
 }
+
+
+//Classe Data
+
+bool Data::ano_bissexto(int ano){
+    if (ano%4 == 0){
+        if(ano%100 != 0) {
+            return true;
+        } else {
+            if(ano%400 == 0){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    } else{
+        return false;
+    }
+}
+
+void Data::validarData(std::string data){
+    //bool dia_valido = true, mes_valido = true, ano_valido = true;
+
+    int dia = stoi(data.substr(0, 2));
+    int mes = stoi(data.substr(3, 2));
+    int ano = stoi(data.substr(6));
+
+    //Dia
+    if(mes != 2){
+        if(dia < 1 || dia > 31){
+            throw std::invalid_argument("Data invalida.");
+        }
+    } else if (mes == 2) {
+        //Ano bissexto
+        if(ano_bissexto(ano) == true){
+            if(dia < 1 || dia > 29){
+                throw std::invalid_argument("Data invalida.");
+            }
+        } else {
+            if(dia < 1 || dia > 28){
+                throw std::invalid_argument("Data invalida.");
+            }
+        }
+    }
+
+    //Mês
+    if(mes < 1 || mes > 12){
+        throw std::invalid_argument("Data invalida.");
+    }
+
+    //Ano
+    if (ano < 2020 || ano > 2099){
+        throw std::invalid_argument("Data invalida.");
+    }
+}
+
+void Data::setData(std::string data){
+    validarData(data);
+    this->data = data;
+}
+
+std::string Data::getData(){
+    return this->data;
+}
+
+
+//Classe EMISSOR
+
+void Emissor::validaCaracteres(std::string emissor){
+    int i;
+    for(i = 0; i < emissor.length(); i++){
+        if(!((int)emissor[i] >= 48 && (int)emissor[i] <= 57)
+           && !((int)emissor[i] >= 65 && (int)emissor[i] <= 90)
+           && !((int)emissor[i] >= 97 && (int)emissor[i] <= 122)
+           && emissor[i] != ' '
+           && emissor[i] != '.'
+           && emissor[i] != '-'){
+                throw std::invalid_argument("Caracter invalido.");
+           }
+    }
+}
+
+void Emissor::validaMaiuscula(std::string emissor){
+    if(((int)emissor[0] >= 65 && (int)emissor[0] <= 90)
+        ||((int)emissor[0] >= 97 && (int)emissor[0] <= 122)){
+            if(!((int)emissor[0] >= 65 && (int)emissor[0] <= 90)){
+                throw std::invalid_argument("A primeira letra deve ser maiuscula.");
+            }
+    }
+}
+
+void Emissor::validaSequencias(std::string emissor){
+    int i;
+    for(i = 0; i < emissor.length() - 1; i++){
+        if(emissor[i] == ' ' || emissor[i] == '.' || emissor[i] == '-'){
+            if(!((int)emissor[i+1] >= 65 && (int)emissor[i+1] <= 90)
+                && !((int)emissor[i+1] >= 97 && (int)emissor[i+1] <= 122)
+                && !((int)emissor[i+1] >= 48 && (int)emissor[i+1] <= 57)){
+                    throw std::invalid_argument("Sequencia de caracteres invalida.");
+            }
+        }
+    }
+}
+
+void Emissor::validarEmissor(std::string emissor){
+    if(emissor.length() < 5 || emissor.length() > 30){
+        throw std::invalid_argument("Tamanho invalido.");
+    }
+    validaCaracteres(emissor);
+    validaMaiuscula(emissor);
+    validaSequencias(emissor);
+}
+
+void Emissor::setEmissor(std::string emissor){
+    validarEmissor(emissor);
+    this->emissor = emissor;
+}
+
+std::string Emissor::getEmissor(){
+    return this->emissor;
+}
+

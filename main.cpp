@@ -111,8 +111,7 @@ int main()
     }
     */
 
-    //TESTE CLASSE CPF
-
+    /*TESTE CLASSE CPF
     Cpf c1;
     string a = "-1";
 
@@ -129,6 +128,46 @@ int main()
         }
 
         cout << "cpf: " << c1.getCpf() << endl;
+    }
+    */
+
+    /*TESTE CLASSE DATA
+    Data d1;
+    string a = "-1";
+
+    while(a.compare("0") != 0){
+        cout << "insira a data: ";
+        cin >> a;
+
+        try {
+            d1.setData(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "data: " << d1.getData() << endl;
+    }
+    */
+
+    //TESTE CLASSE EMISSOR
+    Emissor e1;
+    string a = "-1";
+
+    while(a.compare("0") != 0){
+        cout << "insira a emissor: ";
+        cin >> a;
+
+        try {
+            e1.setEmissor(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "emissor: " << e1.getEmissor() << endl;
     }
 
     return 0;

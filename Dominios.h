@@ -136,5 +136,39 @@ public:
         std::string getCpf();
 };
 
+//Classe DATA
 
+class Data {
+private:
+        std::string data;
+        //Metodo que verifica ano bissexto
+        bool ano_bissexto(int);
+        void validarData(std::string);
+public:
+        void setData(std::string);
+        std::string getData();
+};
+
+//Classe EMISSOR
+
+class Emissor {
+private:
+        std::string emissor;
+        //metodos que validam o texto
+
+        //Checa se ha caracteres nao aceitos
+        void validaCaracteres(std::string);
+
+        //Checa se o primeiro caracter e letra, e se for, se e maiuscula
+        void validaMaiuscula(std::string);
+
+        //Checa se ha pontos ou espacos em sequencia
+        void validaSequencias(std::string);
+
+        //utiliza os metodos anteriores para validar o emissor inserido
+        void validarEmissor(std::string);
+public:
+        void setEmissor(std::string);
+        std::string getEmissor();
+};
 #endif // DOMINIOS_H_INCLUDED
