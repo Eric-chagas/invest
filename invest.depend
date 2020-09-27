@@ -3,7 +3,7 @@
 	<iostream>
 	"Dominios.h"
 
-1601229498 /home/papercut/Documents/codeblocks/invest/Dominios.h
+1601230057 /home/papercut/Documents/codeblocks/invest/Dominios.h
 	<iostream>
 	<stdexcept>
 
@@ -11,7 +11,7 @@
 	<iostream>
 	<stdexcept>
 
-1601218655 source:/home/papercut/Documents/codeblocks/invest/Dominios.cpp
+1601229979 source:/home/papercut/Documents/codeblocks/invest/Dominios.cpp
 	"Dominios.h"
 	<iostream>
 	<stdexcept>

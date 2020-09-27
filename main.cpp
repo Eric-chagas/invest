@@ -91,7 +91,9 @@ int main()
     }
     */
 
-    //TESTE CLASSE CODIGO_PRODUTO
+    /*TESTE CLASSE CODIGO_PRODUTO
+
+
     Codigo_Produto co1;
     string a = "-1";
     while (a.compare("0") != 0){
@@ -107,7 +109,7 @@ int main()
 
         cout << "codigo: " << co1.getCodigo() << endl;
     }
-
+    */
     return 0;
 
 }
