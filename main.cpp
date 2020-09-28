@@ -170,7 +170,7 @@ int main()
     Endereco e1;
 
     try {
-        e1.setEndereco("SQS 304 Bloco  H.");
+        e1.setEndereco("SQS 304.Bloco H.");
         cout << "Sucesso." << endl;
     }
     catch (invalid_argument &e) {
@@ -283,7 +283,7 @@ int main()
     }
     */
 
-    //TESTE CLASSE VALOR_APLICACAO
+    /*TESTE CLASSE VALOR_APLICACAO
     Valor_Aplicacao n1;
     float a = -1.0;
 
@@ -303,6 +303,7 @@ int main()
         cout << "numero: " << n1.getValor() << endl;
     }
 
+    */
 
     return 0;
 

@@ -345,6 +345,15 @@ void Emissor::validaMaiuscula(std::string emissor){
                 throw std::invalid_argument("A primeira letra deve ser maiuscula.");
             }
     }
+    int i;
+    for(i = 0; i < emissor.length() - 1; i++){
+        if(emissor[i] == ' ' || emissor[i] == '.' && !((int)emissor[i+1] >= 48 && (int)emissor[i+1] <= 57)){
+            if(!((int)emissor[i+1] >= 65 && (int)emissor[i+1] <= 90)){
+                throw std::invalid_argument("Termos devem iniciar com letra maiuscula.");
+            }
+        }
+    }
+
 }
 
 void Emissor::validaSequencias(std::string emissor){
@@ -401,6 +410,14 @@ void Endereco::validaMaiuscula(std::string endereco){
                 throw std::invalid_argument("A primeira letra deve ser maiuscula.");
             }
     }
+    int i;
+    for(i = 0; i < endereco.length() - 1; i++){
+        if((endereco[i] == ' ' || endereco[i] == '.') && !((int)endereco[i+1] >= 48 && (int)endereco[i+1] <= 57)){
+            if(!((int)endereco[i+1] >= 65 && (int)endereco[i+1] <= 90)){
+                throw std::invalid_argument("Termos devem iniciar com letra maiuscula.");
+            }
+        }
+    }
 }
 
 void Endereco::validaSequencias(std::string endereco){
@@ -421,8 +438,8 @@ void Endereco::validarEndereco(std::string endereco){
         throw std::invalid_argument("Tamanho invalido.");
     }
     validaCaracteres(endereco);
-    validaMaiuscula(endereco);
     validaSequencias(endereco);
+    validaMaiuscula(endereco);
 }
 
 void Endereco::setEndereco(std::string endereco){
