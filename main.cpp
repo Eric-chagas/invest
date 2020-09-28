@@ -1,15 +1,182 @@
 #include <iostream>
 #include "Dominios.h"
+#include "TUDominios.h"
 
 using namespace std;
 
 int main()
 {
-    /* TESTE CLASSE CEP
+
+
+    //Teste classe CEP
+
+    TUCep* testeCep = new TUCep();
+
+    if(testeCep->run() == true){
+        cout << "Classe \"CEP\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"CEP\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeCep;
+
+
+
+
+    //Teste classe CLASSE
+
+    TUClasse* testeClasse = new TUClasse();
+
+    if(testeClasse->run() == true){
+        cout << "Classe \"CLASSE\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"CLASSE\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeClasse;
+
+
+
+
+    //Teste classe CODIGO_AGENCIA
+
+    TUCodigo_Agencia* testeCodigoAgencia = new TUCodigo_Agencia();
+
+    if(testeCodigoAgencia->run() == true){
+        cout << "Classe \"Codigo_Agencia\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Codigo_Agencia\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeCodigoAgencia;
+
+
+
+    //Teste classe CODIGO_APLICACAO
+
+    TUCodigo_Aplicacao* testeCodigoAplicacao = new TUCodigo_Aplicacao();
+
+    if(testeCodigoAplicacao->run() == true){
+        cout << "Classe \"Codigo_Aplicacao\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Codigo_Aplicacao\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeCodigoAplicacao;
+
+
+
+    //Teste classe CODIGO_BANCO
+
+    TUCodigo_Banco* testeCodigoBanco = new TUCodigo_Banco();
+
+    if(testeCodigoBanco->run() == true){
+        cout << "Classe \"Codigo_Banco\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Codigo_Banco\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeCodigoBanco;
+
+
+
+    //Teste classe Codigo_Produto
+
+    TUCodigo_Produto* testeCodigoProduto = new TUCodigo_Produto();
+
+    if(testeCodigoBanco->run() == true){
+        cout << "Classe \"Codigo_Produto\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Codigo_Produto\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeCodigoBanco;
+
+
+    //Teste Classe CPF
+
+    TUCpf* testeCpf = new TUCpf();
+
+    if(testeCpf->run() == true){
+        cout << "Classe \"CPF\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"CPF\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeCpf;
+
+
+    //Teste Classe DATA
+
+    TUData* testeData = new TUData();
+
+    if(testeData->run() == true){
+        cout << "Classe \"Data\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Data\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeData;
+
+
+    //Teste Classe EMISSOR
+
+    TUEmissor* testeEmissor = new TUEmissor();
+
+    if(testeEmissor->run() == true){
+        cout << "Classe \"Emissor\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Emissor\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeEmissor;
+
+
+    //Teste Classe ENDERECO
+
+    TUEndereco* testeEndereco = new TUEndereco();
+
+    if(testeEndereco->run() == true){
+        cout << "Classe \"Endereco\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Endereco\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeEndereco;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    /*TESTE CLASSE CEP
     Cep c1;
 
     try{
-        c1.setCep(70337080);
+        c1.setCep(2);
         cout << "Sucesso." << endl;
     }
     catch(invalid_argument &e){
@@ -17,6 +184,7 @@ int main()
     }
 
     cout << "Cep: " << c1.getCep() << endl;
+
     */
 
     /*TESTE CLASSE CLASSE
