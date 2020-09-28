@@ -229,4 +229,78 @@ public:
         void setNome(std::string);
         std::string getNome();
 };
+
+//Classe NUMERO
+
+class Numero {
+private:
+        //Numero no formato XXXXXX-Y, onde Y e digito verificador calculado utilizando o algoritmo Modulo de 11.
+        std::string numero;
+        void verificarDigito(std::string);
+public:
+        int calculaDigito(std::string);
+        void setNumero(std::string);
+        std::string getNumero();
+};
+
+//Classe PRAZO
+
+class Prazo {
+private:
+        //Valores aceitos: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72.
+        int prazo;
+        void validarPrazo(int);
+public:
+        void setPrazo(int);
+        int getPrazo();
+};
+
+//Classe SENHA
+
+class Senha {
+private:
+        //Senha no formato XXXXXX
+        std::string senha;
+        void validarSenha(std::string);
+public:
+        void setSenha(std::string);
+        std::string getSenha();
+};
+
+//Classe TAXA
+
+class Taxa {
+private:
+        int taxa;
+        void validarTaxa(int);
+public:
+        void setTaxa(int);
+        int getTaxa();
+};
+
+//Classe VALOR_APLICACAO
+
+class Valor_Aplicacao {
+private:
+        //Valor em reais
+        static const float VALOR_MAXIMO;
+        float valor;
+        void validarValor(float);
+public:
+        void setValor(float);
+        float getValor();
+};
+
+//Classe VALOR_MINIMO
+
+class Valor_Minimo {
+private:
+        //Valores aceitos: 1.000,00, 5.000,00, 10.000 ou 50.000,00
+        float valor;
+        void validarValor(float);
+public:
+        void setValor(float);
+        float getValor();
+};
+
 #endif // DOMINIOS_H_INCLUDED

@@ -203,7 +203,7 @@ int main()
     */
 
 
-    //TESTE CLASSE NOME
+    /*TESTE CLASSE NOME
     Nome n1;
 
     try {
@@ -216,6 +216,92 @@ int main()
 
     cout << "nome: " << n1.getNome() << endl;
 
+    */
+
+    /*TESTE CLASSE NUMERO
+    Numero n1;
+    string a = "-1";
+
+    cout << n1.calculaDigito("546688") <<endl;
+
+    while(a.compare("0") != 0){
+        cout << "insira numero: ";
+        cin >> a;
+
+        try {
+
+            n1.setNumero(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "numero: " << n1.getNumero() << endl;
+    }
+    */
+
+    /*TESTE CLASSE PRAZO
+    Prazo n1;
+    int a = -1;
+
+    while(a != 0){
+        cout << "insira numero: ";
+        cin >> a;
+
+        try {
+
+            n1.setPrazo(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "numero: " << n1.getPrazo() << endl;
+    }
+    */
+
+    /*TESTE CLASSE SENHA
+    Senha n1;
+    string a = "-1";
+
+    while(a.compare("0") != 0){
+        cout << "insira senha: ";
+        cin >> a;
+
+        try {
+
+            n1.setSenha(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "senha: " << n1.getSenha() << endl;
+    }
+    */
+
+    //TESTE CLASSE VALOR_APLICACAO
+    Valor_Aplicacao n1;
+    float a = -1.0;
+
+    while(a != 0.0){
+        cout << "insira valor: ";
+        cin >> a;
+
+        try {
+
+            n1.setValor(a);
+            cout << "Sucesso." << endl;
+        }
+        catch (invalid_argument &e) {
+            cout << "Excecao: " << e.what() << endl;
+        }
+
+        cout << "numero: " << n1.getValor() << endl;
+    }
 
 
     return 0;

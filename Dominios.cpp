@@ -533,5 +533,167 @@ std::string Nome::getNome(){
 }
 
 
+//Classe NUMERO
+
+int Numero::calculaDigito(std::string numero){
+    int soma, resto, n1, n2, n3, n4, n5, n6, dv;
+
+        n1 = (int)numero[0] - 48;
+        n2 = (int)numero[1] - 48;
+        n3 = (int)numero[2] - 48;
+        n4 = (int)numero[3] - 48;
+        n5 = (int)numero[4] - 48;
+        n6 = (int)numero[5] - 48;
+
+        //Calculo do digito
+
+        soma = n1*7 + n2*6 + n3*5 + n4*4 + n5*3 + n6*2;
+        resto = (soma*10)%11;
+
+        if(resto == 10){
+            resto = 0;
+            return resto;
+        }
+        else {
+            return resto;
+        }
+}
+
+void Numero::verificarDigito(std::string numero){
+     int soma, resto, n1, n2, n3, n4, n5, n6, dv;
+
+        n1 = (int)numero[0] - 48;
+        n2 = (int)numero[1] - 48;
+        n3 = (int)numero[2] - 48;
+        n4 = (int)numero[3] - 48;
+        n5 = (int)numero[4] - 48;
+        n6 = (int)numero[5] - 48;
+        dv= (int)numero[7] - 48;
 
 
+        //Verificacao do digito
+
+        soma = n1*7 + n2*6 + n3*5 + n4*4 + n5*3 + n6*2;
+        resto = (soma*10)%11;
+
+        if(resto == 10){
+            resto = 0;
+            if(dv != resto){
+                throw std::invalid_argument("Numero invalido.");
+            }
+        }
+        else{
+            if(dv != resto){
+                throw std::invalid_argument("Numero invalido.");
+            }
+        }
+}
+
+void Numero::setNumero(std::string numero){
+    verificarDigito(numero);
+    this->numero = numero;
+}
+std::string Numero::getNumero(){
+    return this->numero;
+}
+
+
+//Classe PRAZO
+
+//Valores aceitos: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72.
+void Prazo::validarPrazo(int prazo){
+    if(prazo != 6 && prazo!= 12 && prazo!= 18 && prazo!= 24 && prazo!= 30
+       && prazo!= 36 && prazo!= 42 && prazo!= 48 && prazo!= 54 && prazo!= 60 && prazo!= 66 && prazo!= 72){
+        throw std::invalid_argument("Prazo invalido.");
+    }
+}
+void Prazo::setPrazo(int prazo){
+    validarPrazo(prazo);
+    this->prazo = prazo;
+}
+int Prazo::getPrazo(){
+    return this->prazo;
+}
+
+
+//Classe SENHA
+
+void Senha::validarSenha(std::string senha){
+    if(senha.length() != 6){
+        throw std::invalid_argument("Senha muito curta.");
+    }
+    int i = 0, j = 0, frequencia[255];
+    for(j = 0; j < 255; j++){
+        frequencia[j] = 0;
+    }
+    for(i = 0; i < senha.length(); i++){
+        if (!((int)senha[i] >= 48 && (int)senha[i] <= 57)){
+            throw std::invalid_argument("Digito invalido.");
+        }
+        frequencia[senha[i]]++;
+    }
+    for(i = 0; i < 255; i++){
+        if(frequencia[i] > 1){
+            throw std::invalid_argument("Caracter repetido.");
+        }
+    }
+}
+void Senha::setSenha(std::string senha){
+    validarSenha(senha);
+    this->senha = senha;
+}
+std::string Senha::getSenha(){
+    return this->senha;
+}
+
+
+
+//Classe TAXA
+
+void Taxa::validarTaxa(int taxa){
+    if(taxa < 0 || taxa > 200){
+        throw std::invalid_argument("Taxa invalida.");
+    }
+}
+void Taxa::setTaxa(int taxa){
+    validarTaxa(taxa);
+    this->taxa = taxa;
+}
+int Taxa::getTaxa(){
+    return this->taxa;
+}
+
+
+
+//Classe VALOR_APLICACAO
+
+const float Valor_Aplicacao::VALOR_MAXIMO = 1000000.00;
+
+void Valor_Aplicacao::validarValor(float valor){
+    if(valor < 0.0 || valor > VALOR_MAXIMO){
+        throw std::invalid_argument("Valor invalido.");
+    }
+}
+void Valor_Aplicacao::setValor(float valor){
+    validarValor(valor);
+    this->valor = valor;
+}
+float Valor_Aplicacao::getValor(){
+    return this->valor;
+}
+
+
+//Classe VALOR_MINIMO
+
+void Valor_Minimo::validarValor(float valor){
+    if(valor != 1000.00 && valor != 5000.00 && valor != 10000 && valor != 50000.00){
+        throw std::invalid_argument("Valor invalido.");
+    }
+}
+void Valor_Minimo::setValor(float valor){
+    validarValor(valor);
+    this->valor = valor;
+}
+float Valor_Minimo::getValor(){
+    return this->valor;
+}
