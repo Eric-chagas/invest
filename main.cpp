@@ -151,24 +151,72 @@ int main()
     }
     */
 
-    //TESTE CLASSE EMISSOR
+    /*TESTE CLASSE EMISSOR
     Emissor e1;
+
+    try {
+        e1.setEmissor("Alo  alo");
+        cout << "Sucesso." << endl;
+    }
+    catch (invalid_argument &e) {
+        cout << "Excecao: " << e.what() << endl;
+    }
+
+    cout << "emissor: " << e1.getEmissor() << endl;
+
+    */
+
+    /*TESTE CLASSE ENDERECO
+    Endereco e1;
+
+    try {
+        e1.setEndereco("SQS 304 Bloco  H.");
+        cout << "Sucesso." << endl;
+    }
+    catch (invalid_argument &e) {
+        cout << "Excecao: " << e.what() << endl;
+    }
+
+    cout << "endereco: " << e1.getEndereco() << endl;
+
+    */
+
+    /*TESTE CLASSE HORARIO
+    Horario d1;
     string a = "-1";
 
     while(a.compare("0") != 0){
-        cout << "insira a emissor: ";
+        cout << "insira o Horario: ";
         cin >> a;
 
         try {
-            e1.setEmissor(a);
+            d1.setHorario(a);
             cout << "Sucesso." << endl;
         }
         catch (invalid_argument &e) {
             cout << "Excecao: " << e.what() << endl;
         }
 
-        cout << "emissor: " << e1.getEmissor() << endl;
+        cout << "Horario: " << d1.getHorario() << endl;
     }
+
+    */
+
+
+    //TESTE CLASSE NOME
+    Nome n1;
+
+    try {
+        n1.setNome("Julia P");
+        cout << "Sucesso." << endl;
+    }
+    catch (invalid_argument &e) {
+        cout << "Excecao: " << e.what() << endl;
+    }
+
+    cout << "nome: " << n1.getNome() << endl;
+
+
 
     return 0;
 

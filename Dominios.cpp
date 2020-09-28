@@ -378,3 +378,160 @@ std::string Emissor::getEmissor(){
     return this->emissor;
 }
 
+
+//Classe ENDERECO
+
+void Endereco::validaCaracteres(std::string endereco){
+    int i;
+    for(i = 0; i < endereco.length(); i++){
+        if(!((int)endereco[i] >= 48 && (int)endereco[i] <= 57)
+           && !((int)endereco[i] >= 65 && (int)endereco[i] <= 90)
+           && !((int)endereco[i] >= 97 && (int)endereco[i] <= 122)
+           && endereco[i] != ' '
+           && endereco[i] != '.'){
+                throw std::invalid_argument("Caracter invalido.");
+           }
+    }
+}
+
+void Endereco::validaMaiuscula(std::string endereco){
+    if(((int)endereco[0] >= 65 && (int)endereco[0] <= 90)
+        ||((int)endereco[0] >= 97 && (int)endereco[0] <= 122)){
+            if(!((int)endereco[0] >= 65 && (int)endereco[0] <= 90)){
+                throw std::invalid_argument("A primeira letra deve ser maiuscula.");
+            }
+    }
+}
+
+void Endereco::validaSequencias(std::string endereco){
+    int i;
+    for(i = 0; i < endereco.length() - 1; i++){
+        if(endereco[i] == ' ' || endereco[i] == '.'){
+            if(!((int)endereco[i+1] >= 65 && (int)endereco[i+1] <= 90)
+                && !((int)endereco[i+1] >= 97 && (int)endereco[i+1] <= 122)
+                && !((int)endereco[i+1] >= 48 && (int)endereco[i+1] <= 57)){
+                    throw std::invalid_argument("Sequencia de caracteres invalida.");
+            }
+        }
+    }
+}
+
+void Endereco::validarEndereco(std::string endereco){
+    if(endereco.length() < 5 || endereco.length() > 20){
+        throw std::invalid_argument("Tamanho invalido.");
+    }
+    validaCaracteres(endereco);
+    validaMaiuscula(endereco);
+    validaSequencias(endereco);
+}
+
+void Endereco::setEndereco(std::string endereco){
+    validarEndereco(endereco);
+    this->endereco = endereco;
+}
+
+std::string Endereco::getEndereco(){
+    return this->endereco;
+}
+
+
+
+//Classe HORARIO
+
+void Horario::validarHorario(std::string horario){
+    int horas, minutos;
+    horas = stoi(horario.substr(0, 2));
+    minutos = stoi(horario.substr(3));
+
+    if(horas < 13 || horas > 17){
+        throw std::invalid_argument("Horario invalido.");
+    }
+
+    if(horas != HORA_MAXIMA){
+        if(minutos < 0 || minutos > 59){
+            throw std::invalid_argument("Horario invalido.");
+        }
+    }
+    else if (horas == HORA_MAXIMA){
+        if(minutos > 0){
+            throw std::invalid_argument("Horario invalido.");
+        }
+    }
+}
+void Horario::setHorario(std::string horario){
+    validarHorario(horario);
+    this->horario = horario;
+}
+std::string Horario::getHorario(){
+    return this->horario;
+}
+
+
+//Classe NOME
+
+void Nome::validaCaracteres(std::string nome){
+    int i;
+    for(i = 0; i < nome.length(); i++){
+        if(!((int)nome[i] >= 65 && (int)nome[i] <= 90)
+           && !((int)nome[i] >= 97 && (int)nome[i] <= 122)
+           && nome[i] != ' '){
+            throw std::invalid_argument("Caracter invalido.");
+        }
+    }
+}
+void Nome::validaSequencias(std::string nome){
+    int i;
+    for(i = 0; i < nome.length() - 1; i++){
+        if(nome[i] == ' '){
+            if(nome[i+1] == ' '){
+                throw std::invalid_argument("Sequencia de caracteres invalida.");
+            }
+        }
+    }
+}
+void Nome::validaNumerodeLetras(std::string nome){
+    int letras = 0, i;
+    for(i = 0; i < nome.length(); i++){
+        if(((int)nome[i] >= 65 && (int)nome[i] <= 90)
+           || ((int)nome[i] >= 97 && (int)nome[i] <= 122)){
+            letras++;
+        }
+    }
+    if(letras < 5){
+        throw std::invalid_argument("Numero de letras insuficiente.");
+    }
+}
+void Nome::validaMaiuscula(std::string nome){
+    if(!((int)nome[0] >= 65 && (int)nome[0] <= 90)){
+        throw std::invalid_argument("Nomes devem iniciar com letra maiuscula");
+    }
+    int i;
+    for(i = 0; i < nome.length() - 1; i++){
+        if(nome[i] == ' '){
+            if(!((int)nome[i+1] >= 65 && (int)nome[i+1] <= 90)){
+                throw std::invalid_argument("Nomes devem iniciar com letra maiuscula.");
+            }
+        }
+    }
+}
+void Nome::validarNome(std::string nome){
+    if(nome.length() < 5 || nome.length() > 30){
+        throw std::invalid_argument("Tamanho invalido.");
+    }
+
+    validaCaracteres(nome);
+    validaSequencias(nome);
+    validaNumerodeLetras(nome);
+    validaMaiuscula(nome);
+}
+void Nome::setNome(std::string nome){
+    validarNome(nome);
+    this->nome = nome;
+}
+std::string Nome::getNome(){
+    return this->nome;
+}
+
+
+
+

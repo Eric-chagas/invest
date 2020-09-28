@@ -171,4 +171,62 @@ public:
         void setEmissor(std::string);
         std::string getEmissor();
 };
+
+//Classe ENDERECO
+
+class Endereco {
+private:
+        std::string endereco;
+        //metodos que validam o texto
+
+        //Checa se ha caracteres nao aceitos
+        void validaCaracteres(std::string);
+
+        //Checa se o primeiro caracter e letra, e se for, se e maiuscula
+        void validaMaiuscula(std::string);
+
+        //Checa se ha pontos ou espacos em sequencia
+        void validaSequencias(std::string);
+
+        //utiliza os metodos anteriores para validar o emissor inserido
+        void validarEndereco(std::string);
+
+public:
+        void setEndereco(std::string);
+        std::string getEndereco();
+};
+
+//Classe HORARIO
+
+class Horario {
+private:
+        //Valores limite para as horas
+        static const int HORA_MAXIMA = 17;
+        static const int HORA_MINIMA = 13;
+
+        //Horario no formato HH:MM
+        std::string horario;
+        void validarHorario(std::string);
+public:
+        void setHorario(std::string);
+        std::string getHorario();
+};
+
+//Classe NOME
+
+class Nome {
+private:
+        std::string nome;
+
+        //Metodos que validam o texto
+
+        void validaCaracteres(std::string);
+        void validaSequencias(std::string);
+        void validaNumerodeLetras(std::string);
+        void validaMaiuscula(std::string);
+        void validarNome(std::string);
+public:
+        void setNome(std::string);
+        std::string getNome();
+};
 #endif // DOMINIOS_H_INCLUDED

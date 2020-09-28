@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1601242996 source:/home/papercut/Documents/codeblocks/invest/main.cpp
+1601255119 source:/home/papercut/Documents/codeblocks/invest/main.cpp
 	<iostream>
 	"Dominios.h"
 
-1601240556 /home/papercut/Documents/codeblocks/invest/Dominios.h
+1601255143 /home/papercut/Documents/codeblocks/invest/Dominios.h
 	<iostream>
 	<stdexcept>
 
-1601240556 source:/home/papercut/Documents/codeblocks/invest/Dominios.h
+1601255143 source:/home/papercut/Documents/codeblocks/invest/Dominios.h
 	<iostream>
 	<stdexcept>
 
-1601229979 source:/home/papercut/Documents/codeblocks/invest/Dominios.cpp
+1601255152 source:/home/papercut/Documents/codeblocks/invest/Dominios.cpp
 	"Dominios.h"
 	<iostream>
 	<stdexcept>
