@@ -7,6 +7,33 @@
 
 //Classe CEP
 
+/// \brief CEP
+///
+///
+/// ### Classe Cep #
+///
+/// 1. Classe utilizada para representar valor válido de CEP.
+///
+/// 2. Os valores aceitos, consistem em faixas de CEP válidas para determinados estados.
+///
+/// #### Respectivamente, os estados e as faixas de valores aceitos são: #
+///
+/// - <b>São Paulo</b>:
+///   + (1000000 a 5999999) e (8000000 a 8499999)
+///
+/// - <b>Rio de Janeiro</b>:
+///   + (20000000 a 26600999)
+///
+/// - <b>Brasília</b>:
+///   + (70000000 a 70999999)
+///
+/// - <b>Salvador</b>:
+///   + (40000000 a 41999999)
+///
+/// - <b>Forataleza</b>:
+///   + (60000000 a 60999999)
+///
+
 
 class Cep {
 private:
@@ -35,14 +62,77 @@ private:
 
         int cep;
 
+        ///
+        ///
+        /// Método <b> validar </b>.
+        ///
+        ///
+        /// - Realiza a validação de formato do parâmetro passado, de acordo com as faixas de valores aceitas para cep.
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido.
+        ///
+        /// @param cep
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validar(int);
 
 public:
+        ///
+        ///
+        /// Método <b> setCep </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido.
+        ///
+        /// @param cep
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setCep(int);
+
+        ///
+        ///
+        /// Método <b> getCep </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo cep.
+        ///
+        /// @return cep
+        ///
+        ///
+
         int getCep();
 };
 
 //Classe CLASSE
+
+/// \brief CLASSE
+///
+///
+/// ### Classe Classe #
+///
+/// 1. Classe utilizada para representar valor válido de Classe.
+///
+/// 2. Os valores aceitos, consistem em categorias de classe pré-definidas.
+///
+/// #### Os seguintes, são os valores aceitos para classe: #
+///
+/// - <b>CDB</b>
+///
+/// - <b>LCA</b>
+///
+/// - <b>LCI</b>
+///
+/// - <b>LF</b>
+///
+/// - <b>LC</b>
+///
 
 class Classe {
 private:
@@ -54,41 +144,245 @@ private:
         static const std::string VALOR_5;
 
         std::string classe;
+
+        ///
+        ///
+        /// Método <b> validar </b>.
+        ///
+        ///
+        /// - Realiza a validação de formato do parâmetro passado, de acordo com os valores aceitos para classe.
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido.
+        ///
+        /// @param classe
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validar(std::string);
 public:
+
+        ///
+        /// Método <b> setClasse </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido.
+        ///
+        /// @param classe
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
         void setClasse(std::string);
+
+
+        ///
+        /// Método <b> getClasse </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo classe.
+        ///
+        /// @return classe
+        ///
+        ///
+
         std::string getClasse();
 };
 
+
 //Classe CODIGO_AGENCIA
+
+/// \brief CODIGO_AGENCIA
+///
+///
+/// ### Classe Codigo_Agencia #
+///
+/// 1. Classe utilizada para representar valor válido de Código de agência.
+///
+/// 2. Os valores aceitos, consistem no formato XXXX, onde:
+///    + X representa dígito (0-9);
+///    + "0000" é valor considerádo inválido.
+///
+///
+
 
 class Codigo_Agencia {
 private:
         //Codigo invalido para validacao
         static const std::string COD_INVALIDO;
         std::string codigo;
+
+        ///
+        /// Método <b> validar </b>.
+        ///
+        ///
+        /// - Realiza a validação de formato do parâmetro passado, de acordo com os valores aceitos para Código de Agência.
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validar(std::string);
+
+        ///
+        /// Método <b> validarDigitos </b>.
+        ///
+        ///
+        /// - Realiza a busca no parâmetro passado, por valores diferentes de números de 0 a 9.
+        ///
+        /// - Lança exceção caso o parâmetro passado não seja composto exclusivamente por dígitos (0-9).
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarDigitos(std::string);
 public:
+
+        ///
+        /// Método <b> setCodigo </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setCodigo(std::string);
+
+
+        ///
+        /// Método <b> getCodigo </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo codigo.
+        ///
+        /// @return codigo
+        ///
+        ///
+
         std::string getCodigo();
 };
 
 //Classe CODIGO_APLICACAO
+
+
+/// \brief CODIGO_APLICACAO
+///
+///
+/// ### Classe Codigo_Aplicacao #
+///
+/// 1. Classe utilizada para representar valor válido de Código de aplicação.
+///
+/// 2. Os valores aceitos, consistem no formato XXXXX, onde:
+///    + X representa dígito (0-9);
+///    + "00000" é valor considerádo inválido.
+///
+///
 
 class Codigo_Aplicacao{
 private:
         //Codigo invalido para validacao
         static const std::string COD_INVALIDO;
         std::string codigo;
+
+
+        ///
+        /// Método <b> validar </b>.
+        ///
+        ///
+        /// - Realiza a validação de formato do parâmetro passado, de acordo com os valores aceitos para Código de Aplicação.
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void validar(std::string);
+
+
+        ///
+        /// Método <b> validarDigitos </b>.
+        ///
+        ///
+        /// - Realiza a busca no parâmetro passado, por valores diferentes de números de 0 a 9.
+        ///
+        /// - Lança exceção caso o parâmetro passado não seja composto exclusivamente por dígitos (0-9).
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void validarDigitos(std::string);
 public:
+
+        ///
+        /// Método <b> setCodigo </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void setCodigo(std::string);
+
+        ///
+        /// Método <b> getCodigo </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo codigo.
+        ///
+        /// @return codigo
+        ///
+        ///
+
         std::string getCodigo();
 };
 
 //Classe CODIGO_BANCO
+
+/// \brief CODIGO_BANCO
+///
+///
+/// ### Classe Codigo_Banco #
+///
+/// 1. Classe utilizada para representar valor válido de Código de banco.
+///
+/// 2. Os valores aceitos, consistem no formato XXX, onde:
+///    + X representa dígito (0-9);
+///
+/// 3. Valores aceitos são pré-definidos, e correspondem aos códigos dos 5 maiores bancos no Brasil:
+///    + <b>Itau</b>: 341
+///    + <b>Banco do Brasil</b>: 001
+///    + <b>Bradesco</b>: 237
+///    + <b>Caixa</b>: 104
+///    + <b>Santander</b>: 033
+
 
 class Codigo_Banco {
 private:
@@ -101,27 +395,151 @@ private:
         static const std::string COD_SANTANDER;
 
         std::string codigo;
+
+        ///
+        /// Método <b> validar </b>.
+        ///
+        ///
+        /// - Realiza a validação de formato do parâmetro passado, de acordo com os valores aceitos para Código de Banco.
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validar(std::string);
 public:
+
+        ///
+        /// Método <b> setCodigo </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void setCodigo(std::string);
+
+
+        ///
+        /// Método <b> getCodigo </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo codigo.
+        ///
+        /// @return codigo
+        ///
+        ///
+
         std::string getCodigo();
 };
 
 //Classe CODIGO_PRODUTO
+
+/// \brief CODIGO_PRODUTO
+///
+///
+/// ### Classe Codigo_Produto #
+///
+/// 1. Classe utilizada para representar valor válido de Código de produto.
+///
+/// 2. Os valores aceitos, consistem no formato XXX, onde:
+///    + X representa dígito (0-9);
+///    + "000" é valor considerádo inválido.
+///
+///
+
 
 class Codigo_Produto {
 private:
         //Codigo invalido para validacao
         static const std::string COD_INVALIDO;
         std::string codigo;
+
+        ///
+        /// Método <b> validar </b>.
+        ///
+        ///
+        /// - Realiza a validação de formato do parâmetro passado, de acordo com os valores aceitos para Código de produto.
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validar(std::string);
+
+        ///
+        /// Método <b> validarDigitos </b>.
+        ///
+        ///
+        /// - Realiza a busca no parâmetro passado, por valores diferentes de números de 0 a 9.
+        ///
+        /// - Lança exceção caso o parâmetro passado não seja composto exclusivamente por dígitos (0-9).
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarDigitos(std::string);
 public:
+
+        ///
+        /// Método <b> setCodigo </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido, ou valor não aceito.
+        ///
+        /// @param codigo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setCodigo(std::string);
+
+        ///
+        /// Método <b> getCodigo </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo codigo.
+        ///
+        /// @return codigo
+        ///
+        ///
+
         std::string getCodigo();
 };
 
 //Classe CPF
+
+/// \brief CPF
+///
+///
+/// ### Classe Cpf #
+///
+/// 1. Classe utilizada para representar valor válido de CPF.
+///
+/// 2. Os valores aceitos, consistem no formato XXX.XXX.XXX-YY, onde:
+///    + X e Y representam dígito (0-9);
+///    + YY são os dois dígitos verificadores de validade do número de CPF.
+///    + A validação de YY ocorre por meio de algorítmo específico e unificado.
+///
 
 class Cpf {
 private:
