@@ -545,70 +545,384 @@ class Cpf {
 private:
         //CPF, no formato: (XXX.XXX.XXX-XX)
         std::string cpf;
+
+
+        ///
+        /// Método <b> validarCpf </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado, de acordo com o algoritmo de cálculo dos digitos verificadores do CPF.
+        ///
+        /// - O algorítmo é unificado para o número de CPF no Brasil, e é de fácil acesso.
+        ///   + As informações para a implementação do algorítmo nessa função, foram retiradas do seguinte endereço: https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/
+        ///
+        ///
+        /// - Lança exceção caso o parâmetro passado corresponda a um CPF inválido.
+        ///
+        ///
+        /// @param cpf
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         //Metodo que consiste em um algoritmo de validacao dos 2 digitos verificadores do CPF.
         void validarCpf(std::string);
 public:
+
+        ///
+        /// Método <b> setCpf </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido.
+        ///
+        /// @param cpf
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setCpf(std::string);
+
+        ///
+        /// Método <b> getCpf </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo CPF.
+        ///
+        /// @return cpf
+        ///
+        ///
+
         std::string getCpf();
 };
 
 //Classe DATA
 
+/// \brief DATA
+///
+///
+/// ### Classe Data #
+///
+/// 1. Classe utilizada para representar valor válido de Data.
+///
+/// 2. Os valores aceitos, consistem no formato DD/MM/YYYY (dia, mes e ano respectivamente), onde:
+///    + D, M e Y representam dígito (0-9);
+///    + São permitidos anos bissextos;
+///    + São permitidas datas entre 2020 e 2099
+///
+///
+
 class Data {
 private:
         std::string data;
+
+        ///
+        /// Método <b> ano_bissexto </b>.
+        ///
+        /// - Realiza a verificação de existência de ano bissexto no ano passada como parâmetro.
+        ///
+        /// - Retorna true, caso ano seja bissexto, e false caso contrário.
+        ///
+        /// @param ano
+        ///
+        /// @return bool
+        ///
+        ///
+
         //Metodo que verifica ano bissexto
         bool ano_bissexto(int);
+
+        ///
+        /// Método <b> validarData </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado, de acordo com os requisitos de valor válido para a classe DATA
+        ///
+        /// - Lança exceção em caso de formato ou valor invalido para data.
+        ///
+        /// @param data
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarData(std::string);
 public:
+
+        ///
+        /// Método <b> setData </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param data
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setData(std::string);
+
+        ///
+        /// Método <b> getData </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo data.
+        ///
+        /// @return data
+        ///
+        ///
+
         std::string getData();
 };
 
 //Classe EMISSOR
+
+/// \brief EMISSOR
+///
+///
+/// ### Classe Emissor #
+///
+/// 1. Classe utilizada para representar valor válido de emissor.
+///
+/// 2. Os valores aceitos, consistem em texto, onde:
+///    + Existem entre 5 e 30 caracteres;
+///    + Cada caracter pode ser letra (A-Z ou a-z), dígito (0 – 9), caracter -, ponto ou espaço.;
+///    + Apenas letras e dígitos podem estar em sequência;
+///    + Em termo cujo primeiro caracter é letra, a mesma é maiúscula.
+///
+
 
 class Emissor {
 private:
         std::string emissor;
         //metodos que validam o texto
 
+        ///
+        /// Método <b> validaCaracteres </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existirem caracteres que não sejam os especificados nos requisitos da classe Emissor.
+        ///
+        /// @param emissor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         //Checa se ha caracteres nao aceitos
         void validaCaracteres(std::string);
+
+
+        ///
+        /// Método <b> validaMaiuscula </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existirem termos cujo primeiro caracter seja letra, e ela não seja maiúscula
+        ///
+        ///
+        /// @param emissor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
 
         //Checa se o primeiro caracter e letra, e se for, se e maiuscula
         void validaMaiuscula(std::string);
 
+
+        ///
+        /// Método <b> validaSequencias </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existir sequência de caracteres que não sejam letras ou números
+        ///
+        ///
+        /// @param emissor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         //Checa se ha pontos ou espacos em sequencia
         void validaSequencias(std::string);
+
+
+
+        ///
+        /// Método <b> validarEmissor </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Emissor
+        ///
+        ///
+        /// @param emissor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
 
         //utiliza os metodos anteriores para validar o emissor inserido
         void validarEmissor(std::string);
 public:
+
+        ///
+        /// Método <b> setEmissor </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param emissor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setEmissor(std::string);
+
+        ///
+        /// Método <b> getEmissor </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo emissor.
+        ///
+        /// @return emissor
+        ///
+        ///
+
         std::string getEmissor();
 };
 
 //Classe ENDERECO
+
+/// \brief ENDERECO
+///
+///
+/// ### Classe Endereco #
+///
+/// 1. Classe utilizada para representar valor válido de endereço.
+///
+/// 2. Os valores aceitos, consistem em texto, onde:
+///    + Existem entre 5 e 20 caracteres;
+///    + Cada caracter pode ser letra (A-Z ou a-z), dígito (0 – 9), ponto ou espaço.;
+///    + Apenas letras e dígitos podem estar em sequência;
+///    + Em termo cujo primeiro caracter é letra, a mesma é maiúscula.
+///
+
 
 class Endereco {
 private:
         std::string endereco;
         //metodos que validam o texto
 
+
+        ///
+        /// Método <b> validaCaracteres </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existirem caracteres que não sejam os especificados nos requisitos da classe Endereco.
+        ///
+        /// @param endereco
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         //Checa se ha caracteres nao aceitos
         void validaCaracteres(std::string);
+
+
+        ///
+        /// Método <b> validaMaiuscula </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existirem termos cujo primeiro caracter seja letra, e ela não seja maiúscula
+        ///
+        ///
+        /// @param endereco
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
 
         //Checa se o primeiro caracter e letra, e se for, se e maiuscula
         void validaMaiuscula(std::string);
 
+
+        ///
+        /// Método <b> validaSequencias </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existir sequência de caracteres que não sejam letras ou números
+        ///
+        ///
+        /// @param endereco
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         //Checa se ha pontos ou espacos em sequencia
         void validaSequencias(std::string);
+
+
+        ///
+        /// Método <b> validarEndereco </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Endereco
+        ///
+        ///
+        /// @param endereco
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
 
         //utiliza os metodos anteriores para validar o emissor inserido
         void validarEndereco(std::string);
 
 public:
+
+        ///
+        /// Método <b> setEndereco </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param endereco
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setEndereco(std::string);
+
+        ///
+        /// Método <b> getEndereco </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo endereco.
+        ///
+        /// @return endereco
+        ///
+        ///
+
         std::string getEndereco();
 };
 
@@ -625,10 +939,34 @@ private:
         void validarHorario(std::string);
 public:
         void setHorario(std::string);
+
+        ///
+        /// Método <b> getHorario </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo horario.
+        ///
+        /// @return horario
+        ///
+        ///
+
         std::string getHorario();
 };
 
 //Classe NOME
+
+/// \brief NOME
+///
+///
+/// ### Classe Nome #
+///
+/// 1. Classe utilizada para representar valor válido de nome.
+///
+/// 2. Os valores aceitos, consistem em texto, onde:
+///    + Existem entre 5 e 30 caracteres;
+///    + Cada caracter pode ser letra (A-Z ou a-z), ou espaço.;
+///    + Apenas letras podem estar em sequência;
+///    + Em todos os termos o primeiro caracter é letra, e a mesma é maiúscula;
+///    + Deve haver pelomenos 5 letras.
 
 class Nome {
 private:
@@ -636,13 +974,114 @@ private:
 
         //Metodos que validam o texto
 
+        ///
+        /// Método <b> validaCaracteres </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existirem caracteres que não sejam os especificados nos requisitos da classe Nome.
+        ///
+        /// @param nome
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validaCaracteres(std::string);
+
+        ///
+        /// Método <b> validaSequencias </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existir sequência de caracteres que não sejam letras
+        ///
+        ///
+        /// @param nome
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validaSequencias(std::string);
+
+        ///
+        /// Método <b> validaNumerodeLetras </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção caso não hajam pelo menos 5 letras
+        ///
+        ///
+        /// @param nome
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void validaNumerodeLetras(std::string);
+
+
+        ///
+        /// Método <b> validaMaiuscula </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de existirem termos cujo primeiro caracter seja letra, e ela não seja maiúscula
+        ///
+        ///
+        /// @param nome
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validaMaiuscula(std::string);
+
+        ///
+        /// Método <b> validarNome </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Nome
+        ///
+        ///
+        /// @param nome
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void validarNome(std::string);
 public:
+
+        ///
+        /// Método <b> setNome </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param nome
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setNome(std::string);
+
+        ///
+        /// Método <b> getNome </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo nome.
+        ///
+        /// @return nome
+        ///
+        ///
+
         std::string getNome();
 };
 
@@ -656,6 +1095,16 @@ private:
 public:
         int calculaDigito(std::string);
         void setNumero(std::string);
+
+        ///
+        /// Método <b> getNumero </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo numero.
+        ///
+        /// @return numero
+        ///
+        ///
+
         std::string getNumero();
 };
 
@@ -668,6 +1117,16 @@ private:
         void validarPrazo(int);
 public:
         void setPrazo(int);
+
+        ///
+        /// Método <b> getPrazo </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo prazo.
+        ///
+        /// @return prazo
+        ///
+        ///
+
         int getPrazo();
 };
 
@@ -680,6 +1139,16 @@ private:
         void validarSenha(std::string);
 public:
         void setSenha(std::string);
+
+        ///
+        /// Método <b> getSenha </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo senha.
+        ///
+        /// @return senha
+        ///
+        ///
+
         std::string getSenha();
 };
 
@@ -691,6 +1160,16 @@ private:
         void validarTaxa(int);
 public:
         void setTaxa(int);
+
+        ///
+        /// Método <b> getTaxa </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo taxa.
+        ///
+        /// @return taxa
+        ///
+        ///
+
         int getTaxa();
 };
 
@@ -704,6 +1183,16 @@ private:
         void validarValor(float);
 public:
         void setValor(float);
+
+        ///
+        /// Método <b> getValor </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo valor.
+        ///
+        /// @return valor
+        ///
+        ///
+
         float getValor();
 };
 
@@ -716,6 +1205,16 @@ private:
         void validarValor(float);
 public:
         void setValor(float);
+
+        ///
+        /// Método <b> getValor </b>.
+        ///
+        /// - Retorna o valor armazenado no atributo valor.
+        ///
+        /// @return valor
+        ///
+        ///
+
         float getValor();
 };
 
