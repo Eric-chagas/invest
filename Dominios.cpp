@@ -8,6 +8,7 @@
 
 //Classe CEP
 
+
 void Cep::validar(int cep){
     if (!((cep >= MIN_1_SP && cep <= MAX_1_SP)
           || (cep >= MIN_2_SP && cep <= MAX_2_SP)

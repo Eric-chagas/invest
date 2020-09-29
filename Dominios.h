@@ -4,11 +4,9 @@
 #include <iostream>
 #include <stdexcept>
 
-//Codar as declaracoes das classes
-//Lembrar da documentacao
-//Lembrar do std::
 
 //Classe CEP
+
 
 class Cep {
 private:
