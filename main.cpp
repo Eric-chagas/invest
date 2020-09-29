@@ -89,14 +89,14 @@ int main()
 
     TUCodigo_Produto* testeCodigoProduto = new TUCodigo_Produto();
 
-    if(testeCodigoBanco->run() == true){
+    if(testeCodigoProduto->run() == true){
         cout << "Classe \"Codigo_Produto\" testada com sucesso!" << endl;
     }
     else {
         cout << "Teste de \"Codigo_Produto\" falhou! Erro na implementação." << endl;
     }
 
-    delete testeCodigoBanco;
+    delete testeCodigoProduto;
 
 
     //Teste Classe CPF
@@ -155,323 +155,120 @@ int main()
     delete testeEndereco;
 
 
+    //Teste Classe HORARIO
 
+    TUHorario* testeHorario = new TUHorario();
 
-
-
-
-
-
-
-
-
-
-
-
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    /*TESTE CLASSE CEP
-    Cep c1;
-
-    try{
-        c1.setCep(2);
-        cout << "Sucesso." << endl;
+    if(testeHorario->run() == true){
+        cout << "Classe \"Horario\" testada com sucesso!" << endl;
     }
-    catch(invalid_argument &e){
-        cout << "Excecao: " << e.what() << endl;
+    else {
+        cout << "Teste de \"Horario\" falhou! Erro na implmentação." << endl;
     }
 
-    cout << "Cep: " << c1.getCep() << endl;
+    delete testeHorario;
 
-    */
 
-    /*TESTE CLASSE CLASSE
-    Classe cl1;
-    string a = "-1";
-    while (a.compare("0") != 0){
-            cout << "insira a: ";
-            cin >> a;
-        try {
-            cl1.setClasse(a);
-            cout << "sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
+    //Teste Classe NOME
 
-        cout << "classe: " << cl1.getClasse() << endl;
+    TUNome* testeNome = new TUNome();
+
+    if(testeNome->run() == true){
+        cout << "Classe \"Nome\" testada com sucesso!" << endl;
     }
-    */
-
-    /*TESTE CLASSE CODIGO_AGENCIA
-    Codigo_Agencia co1;
-    string a = "-1";
-    while (a.compare("0") != 0){
-            cout << "insira a: ";
-            cin >> a;
-        try {
-            co1.setCodigo(a);
-            cout << "sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "codigo: " << co1.getCodigo() << endl;
-    }
-    */
-
-    /*TESTE CLASSE CODIGO_APLICACAO
-    Codigo_Aplicacao co1;
-    string a = "-1";
-    while (a.compare("0") != 0){
-            cout << "insira a: ";
-            cin >> a;
-        try {
-            co1.setCodigo(a);
-            cout << "sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "codigo: " << co1.getCodigo() << endl;
-    }
-    */
-
-    /*TESTE CLASSE CODIGO_BANCO
-    Codigo_Banco co1;
-    string a = "-1";
-    while (a.compare("0") != 0){
-            cout << "insira a: ";
-            cin >> a;
-        try {
-            co1.setCodigo(a);
-            cout << "sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "codigo: " << co1.getCodigo() << endl;
-    }
-    */
-
-    /*TESTE CLASSE CODIGO_PRODUTO
-
-
-    Codigo_Produto co1;
-    string a = "-1";
-    while (a.compare("0") != 0){
-            cout << "insira a: ";
-            cin >> a;
-        try {
-            co1.setCodigo(a);
-            cout << "sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "codigo: " << co1.getCodigo() << endl;
-    }
-    */
-
-    /*TESTE CLASSE CPF
-    Cpf c1;
-    string a = "-1";
-
-    while(a.compare("0") != 0){
-        cout << "insira a: ";
-        cin >> a;
-
-        try {
-            c1.setCpf(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "cpf: " << c1.getCpf() << endl;
-    }
-    */
-
-    /*TESTE CLASSE DATA
-    Data d1;
-    string a = "-1";
-
-    while(a.compare("0") != 0){
-        cout << "insira a data: ";
-        cin >> a;
-
-        try {
-            d1.setData(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "data: " << d1.getData() << endl;
-    }
-    */
-
-    /*TESTE CLASSE EMISSOR
-    Emissor e1;
-
-    try {
-        e1.setEmissor("Alo  alo");
-        cout << "Sucesso." << endl;
-    }
-    catch (invalid_argument &e) {
-        cout << "Excecao: " << e.what() << endl;
+    else {
+        cout << "Teste de \"Nome\" falhou! Erro na implmentação." << endl;
     }
 
-    cout << "emissor: " << e1.getEmissor() << endl;
+    delete testeNome;
 
-    */
 
-    /*TESTE CLASSE ENDERECO
-    Endereco e1;
 
-    try {
-        e1.setEndereco("SQS 304.Bloco H.");
-        cout << "Sucesso." << endl;
+    //Teste Classe NUMERO
+
+    TUNumero* testeNumero = new TUNumero();
+
+    if(testeNumero->run() == true){
+        cout << "Classe \"Numero\" testada com sucesso!" << endl;
     }
-    catch (invalid_argument &e) {
-        cout << "Excecao: " << e.what() << endl;
-    }
-
-    cout << "endereco: " << e1.getEndereco() << endl;
-
-    */
-
-    /*TESTE CLASSE HORARIO
-    Horario d1;
-    string a = "-1";
-
-    while(a.compare("0") != 0){
-        cout << "insira o Horario: ";
-        cin >> a;
-
-        try {
-            d1.setHorario(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "Horario: " << d1.getHorario() << endl;
+    else {
+        cout << "Teste de \"Numero\" falhou! Erro na implmentação." << endl;
     }
 
-    */
+    delete testeNumero;
 
 
-    /*TESTE CLASSE NOME
-    Nome n1;
+    //Teste Classe PRAZO
 
-    try {
-        n1.setNome("Julia P");
-        cout << "Sucesso." << endl;
+    TUPrazo* testePrazo = new TUPrazo();
+
+    if(testePrazo->run() == true){
+        cout << "Classe \"Prazo\" testada com sucesso!" << endl;
     }
-    catch (invalid_argument &e) {
-        cout << "Excecao: " << e.what() << endl;
-    }
-
-    cout << "nome: " << n1.getNome() << endl;
-
-    */
-
-    /*TESTE CLASSE NUMERO
-    Numero n1;
-    string a = "-1";
-
-    cout << n1.calculaDigito("546688") <<endl;
-
-    while(a.compare("0") != 0){
-        cout << "insira numero: ";
-        cin >> a;
-
-        try {
-
-            n1.setNumero(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "numero: " << n1.getNumero() << endl;
-    }
-    */
-
-    /*TESTE CLASSE PRAZO
-    Prazo n1;
-    int a = -1;
-
-    while(a != 0){
-        cout << "insira numero: ";
-        cin >> a;
-
-        try {
-
-            n1.setPrazo(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "numero: " << n1.getPrazo() << endl;
-    }
-    */
-
-    /*TESTE CLASSE SENHA
-    Senha n1;
-    string a = "-1";
-
-    while(a.compare("0") != 0){
-        cout << "insira senha: ";
-        cin >> a;
-
-        try {
-
-            n1.setSenha(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "senha: " << n1.getSenha() << endl;
-    }
-    */
-
-    /*TESTE CLASSE VALOR_APLICACAO
-    Valor_Aplicacao n1;
-    float a = -1.0;
-
-    while(a != 0.0){
-        cout << "insira valor: ";
-        cin >> a;
-
-        try {
-
-            n1.setValor(a);
-            cout << "Sucesso." << endl;
-        }
-        catch (invalid_argument &e) {
-            cout << "Excecao: " << e.what() << endl;
-        }
-
-        cout << "numero: " << n1.getValor() << endl;
+    else {
+        cout << "Teste de \"Prazo\" falhou! Erro na implmentação." << endl;
     }
 
-    */
+    delete testePrazo;
+
+
+    //Teste Classe SENHA
+
+    TUSenha* testeSenha = new TUSenha();
+
+    if(testeSenha->run() == true){
+        cout << "Classe \"Senha\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Senha\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeSenha;
+
+
+    //Teste Classe TAXA
+
+    TUTaxa* testeTaxa = new TUTaxa();
+
+    if(testeTaxa->run() == true){
+        cout << "Classe \"Taxa\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Taxa\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeTaxa;
+
+
+    //Teste Classe VALOR_APLICACAO
+
+    TUValor_Aplicacao* testeValor_Aplicacao = new TUValor_Aplicacao();
+
+    if(testeValor_Aplicacao->run() == true){
+        cout << "Classe \"Valor_Aplicacao\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Valor_Aplicacao\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeValor_Aplicacao;
+
+
+    //Teste Classe VALOR_MINIMO
+
+    TUValor_Minimo* testeValor_Minimo = new TUValor_Minimo();
+
+    if(testeValor_Minimo->run() == true){
+        cout << "Classe \"Valor_Minimo\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"Valor_Minimo\" falhou! Erro na implmentação." << endl;
+    }
+
+    delete testeValor_Minimo;
+
+
+
 
     return 0;
 

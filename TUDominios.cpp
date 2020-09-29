@@ -425,15 +425,15 @@ bool TUData::run(){
 //Classe TUEmissor
 
 //Valor valido para Emissor
-const std::string EMISSOR_VALIDO = "Secretaria-d E.Seguranca02.";
+const std::string TUEmissor::EMISSOR_VALIDO = "Secretaria-d E.Seguranca02.";
 //Valor invalido para Emissor
-const std::string EMISSOR_1_INVALIDO = "\\&^%$#\caracter estranho";
+const std::string TUEmissor::EMISSOR_1_INVALIDO = "//&^%$#//caracter estranho";
 //Valor invalido para Emissor
-const std::string EMISSOR_2_INVALIDO = "espacos   .. ----  sequenciais";
+const std::string TUEmissor::EMISSOR_2_INVALIDO = "espacos   .. ----  sequenciais";
 //Valor invalido para Emissor
-const std::string EMISSOR_3_INVALIDO = "lETRA mINUSCULA NAO PODE";
+const std::string TUEmissor::EMISSOR_3_INVALIDO = "lETRA mINUSCULA NAO PODE";
 //Valor invalido para Emissor
-const std::string EMISSOR_4_INVALIDO = "longooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo";
+const std::string TUEmissor::EMISSOR_4_INVALIDO = "longooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo";
 
 void TUEmissor::construir(){
     c1 = new Emissor();
@@ -506,15 +506,15 @@ bool TUEmissor::run(){
 //Classe TUEndereco
 
 //Valor valido para Endereco
-const std::string ENDERECO_VALIDO = "St.Johns Wood02";
+const std::string TUEndereco::ENDERECO_VALIDO = "St.Johns Wood02";
 //Valor invalido para Endereco
-const std::string ENDERECO_1_INVALIDO = "\\&^%$#\ABBEY.Rd";
+const std::string TUEndereco::ENDERECO_1_INVALIDO = "//&^%$#/ABBEY.Rd";
 //Valor invalido para Endereco
-const std::string ENDERECO_2_INVALIDO = "o!h d4rlng ..----  ";
+const std::string TUEndereco::ENDERECO_2_INVALIDO = "o!h d4rlng ..----  ";
 //Valor invalido para Endereco
-const std::string ENDERECO_3_INVALIDO = "b3CUZ C aaa";
+const std::string TUEndereco::ENDERECO_3_INVALIDO = "b3CUZ C aaa";
 //Valor invalido para Endereco
-const std::string ENDERECO_4_INVALIDO = "shor";
+const std::string TUEndereco::ENDERECO_4_INVALIDO = "shor";
 
 void TUEndereco::construir(){
     c1 = new Endereco();
@@ -582,4 +582,448 @@ bool TUEndereco::run(){
 
     return sucesso;
 }
+
+
+
+//Classe TUHorario
+
+//Valor valido para Horario
+const std::string TUHorario::HORARIO_1_VALIDO = "13:00";
+//Valor valido para Horario
+const std::string TUHorario::HORARIO_2_VALIDO = "17:00";
+//Valor valido para Horario
+const std::string TUHorario::HORARIO_3_VALIDO = "15:39";
+//Valor invalido para Horario
+const std::string TUHorario::HORARIO_INVALIDO = "22:30";
+
+void TUHorario::construir(){
+    c1 = new Horario();
+    sucesso = true;
+}
+void TUHorario::testarSucesso1(){
+    try {
+        c1->setHorario(HORARIO_1_VALIDO);
+        if(c1->getHorario() != HORARIO_1_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUHorario::testarSucesso2(){
+    try {
+        c1->setHorario(HORARIO_2_VALIDO);
+        if(c1->getHorario() != HORARIO_2_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUHorario::testarSucesso3(){
+    try {
+        c1->setHorario(HORARIO_3_VALIDO);
+        if(c1->getHorario() != HORARIO_3_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUHorario::testarFalha(){
+    try{
+        c1->setHorario(HORARIO_INVALIDO);
+        sucesso = false;
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUHorario::destruir(){
+    delete c1;
+}
+bool TUHorario::run(){
+    construir();
+    testarSucesso1();
+    testarSucesso2();
+    testarSucesso3();
+    testarFalha();
+    destruir();
+
+    return sucesso;
+}
+
+
+
+
+//Classe TUNome
+
+//Valor valido para Nome
+const std::string TUNome::NOME_VALIDO = "Jane Doe";
+//Valor invalido para Nome
+const std::string TUNome::NOME_1_INVALIDO = "Meu.n00me";
+//Valor invalido para Nome
+const std::string TUNome::NOME_2_INVALIDO = "  Espacoso  Aqui";
+//Valor invalido para Nome
+const std::string TUNome::NOME_3_INVALIDO = "Nome comum";
+//Valor invalido para Nome
+const std::string TUNome::NOME_4_INVALIDO = "E3 L3tr4";
+
+void TUNome::construir(){
+    c1 = new Nome();
+    sucesso = true;
+}
+void TUNome::destruir(){
+    delete c1;
+}
+void TUNome::testarSucesso(){
+    try {
+        c1->setNome(NOME_VALIDO);
+        if(c1->getNome() != NOME_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUNome::testarFalha1(){
+    try {
+        c1->setNome(NOME_1_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUNome::testarFalha2(){
+    try {
+        c1->setNome(NOME_2_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUNome::testarFalha3(){
+    try {
+        c1->setNome(NOME_3_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUNome::testarFalha4(){
+    try {
+        c1->setNome(NOME_4_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+bool TUNome::run(){
+    construir();
+    testarSucesso();
+    testarFalha1();
+    testarFalha2();
+    testarFalha3();
+    testarFalha4();
+    destruir();
+
+    return sucesso;
+}
+
+
+
+//Classe TUNumero
+
+//Valor valido para Numero
+const std::string TUNumero::NUMERO_VALIDO = "546688-1";
+//Valor invalido para Numero
+const std::string TUNumero::NUMERO_1_INVALIDO = "466713-9";
+//Valor invalido para Numero
+const std::string TUNumero::NUMERO_2_INVALIDO = "984235-2";
+
+void TUNumero::construir(){
+    c1 = new Numero();
+    sucesso = true;
+}
+void TUNumero::testarSucesso(){
+    try {
+        c1->setNumero(NUMERO_VALIDO);
+        if(c1->getNumero() != NUMERO_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUNumero::testarFalha1(){
+    try {
+        c1->setNumero(NUMERO_1_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUNumero::testarFalha2(){
+    try {
+        c1->setNumero(NUMERO_2_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUNumero::destruir(){
+    delete c1;
+}
+bool TUNumero::run(){
+
+    construir();
+    testarSucesso();
+    testarFalha1();
+    testarFalha2();
+    destruir();
+
+    return sucesso;
+}
+
+
+
+// Classe TUPrazo
+
+void TUPrazo::construir(){
+    c1 = new Prazo();
+    sucesso = true;
+}
+void TUPrazo::testarSucesso(){
+    try {
+        c1->setPrazo(PRAZO_VALIDO);
+        if(c1->getPrazo() != PRAZO_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUPrazo::testarFalha(){
+    try {
+        c1->setPrazo(PRAZO_INVALIDO);
+        sucesso = false;
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUPrazo::destruir(){
+    delete c1;
+}
+bool TUPrazo::run(){
+
+    construir();
+    testarSucesso();
+    testarFalha();
+    destruir();
+
+    return sucesso;
+}
+
+
+
+//Classe TUSenha
+
+//Valor valido para Senha
+const std::string TUSenha::SENHA_VALIDA = "102934";
+//Valor invalido para Senha
+const std::string TUSenha::SENHA_1_INVALIDA = "9283Ab";
+//Valor invalido para Senha
+const std::string TUSenha::SENHA_2_INVALIDA = "222111";
+
+void TUSenha::construir(){
+    c1 = new Senha();
+    sucesso = true;
+}
+void TUSenha::destruir(){
+    delete c1;
+}
+void TUSenha::testarSucesso(){
+    try {
+        c1->setSenha(SENHA_VALIDA);
+        if(c1->getSenha() != SENHA_VALIDA){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUSenha::testarFalha1(){
+    try {
+        c1->setSenha(SENHA_1_INVALIDA);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUSenha::testarFalha2(){
+    try {
+        c1->setSenha(SENHA_2_INVALIDA);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+bool TUSenha::run(){
+    construir();
+    testarSucesso();
+    testarFalha1();
+    testarFalha2();
+    destruir();
+
+    return sucesso;
+}
+
+
+
+// Classe TUTaxa
+
+void TUTaxa::construir(){
+    c1 = new Taxa();
+    sucesso = true;
+}
+void TUTaxa::testarSucesso(){
+    try {
+        c1->setTaxa(TAXA_VALIDA);
+        if(c1->getTaxa() != TAXA_VALIDA){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUTaxa::testarFalha(){
+    try {
+        c1->setTaxa(TAXA_INVALIDA);
+        sucesso = false;
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUTaxa::destruir(){
+    delete c1;
+}
+bool TUTaxa::run(){
+
+    construir();
+    testarSucesso();
+    testarFalha();
+    destruir();
+
+    return sucesso;
+}
+
+
+
+// Classe TUValor_Aplicacao
+
+void TUValor_Aplicacao::construir(){
+    c1 = new Valor_Aplicacao();
+    sucesso = true;
+}
+void TUValor_Aplicacao::testarSucesso(){
+    try {
+        c1->setValor(VALOR_APLICACAO_VALIDO);
+        if(c1->getValor() != VALOR_APLICACAO_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUValor_Aplicacao::testarFalha(){
+    try {
+        c1->setValor(VALOR_APLICACAO_INVALIDO);
+        sucesso = false;
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUValor_Aplicacao::destruir(){
+    delete c1;
+}
+bool TUValor_Aplicacao::run(){
+
+    construir();
+    testarSucesso();
+    testarFalha();
+    destruir();
+
+    return sucesso;
+}
+
+
+// Classe TUValor_Minimo
+
+void TUValor_Minimo::construir(){
+    c1 = new Valor_Minimo();
+    sucesso = true;
+}
+void TUValor_Minimo::testarSucesso(){
+    try {
+        c1->setValor(VALOR_MINIMO_VALIDO);
+        if(c1->getValor() != VALOR_MINIMO_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUValor_Minimo::testarFalha(){
+    try {
+        c1->setValor(VALOR_MINIMO_INVALIDO);
+        sucesso = false;
+    }
+    catch (std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+void TUValor_Minimo::destruir(){
+    delete c1;
+}
+bool TUValor_Minimo::run(){
+
+    construir();
+    testarSucesso();
+    testarFalha();
+    destruir();
+
+    return sucesso;
+}
+
 

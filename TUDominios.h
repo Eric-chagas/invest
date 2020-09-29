@@ -228,15 +228,15 @@ public:
 class TUEmissor{
 private:
         //Valor valido para Emissor
-        static const std::string Emissor_VALIDO;
+        static const std::string EMISSOR_VALIDO;
         //Valor invalido para Emissor
-        static const std::string Emissor_1_INVALIDO;
+        static const std::string EMISSOR_1_INVALIDO;
         //Valor invalido para Emissor
-        static const std::string Emissor_2_INVALIDO;
+        static const std::string EMISSOR_2_INVALIDO;
         //Valor invalido para Emissor
-        static const std::string Emissor_3_INVALIDO;
+        static const std::string EMISSOR_3_INVALIDO;
         //Valor invalido para Emissor
-        static const std::string Emissor_4_INVALIDO;
+        static const std::string EMISSOR_4_INVALIDO;
 
         Emissor* c1;
 
@@ -262,15 +262,15 @@ public:
 class TUEndereco{
 private:
         //Valor valido para Endereco
-        static const std::string Endereco_VALIDO;
+        static const std::string ENDERECO_VALIDO;
         //Valor invalido para Endereco
-        static const std::string Endereco_1_INVALIDO;
+        static const std::string ENDERECO_1_INVALIDO;
         //Valor invalido para Endereco
-        static const std::string Endereco_2_INVALIDO;
+        static const std::string ENDERECO_2_INVALIDO;
         //Valor invalido para Endereco
-        static const std::string Endereco_3_INVALIDO;
+        static const std::string ENDERECO_3_INVALIDO;
         //Valor invalido para Endereco
-        static const std::string Endereco_4_INVALIDO;
+        static const std::string ENDERECO_4_INVALIDO;
 
         Endereco* c1;
 
@@ -280,6 +280,226 @@ private:
         void testarFalha2();
         void testarFalha3();
         void testarFalha4();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+//Classe TUHorario
+
+class TUHorario{
+private:
+        //Valor valido para Horario
+        static const std::string HORARIO_1_VALIDO;
+        //Valor valido para Horario
+        static const std::string HORARIO_2_VALIDO;
+        //Valor valido para Horario
+        static const std::string HORARIO_3_VALIDO;
+        //Valor invalido para Horario
+        static const std::string HORARIO_INVALIDO;
+
+        Horario* c1;
+
+        void construir();
+        void testarSucesso1();
+        void testarSucesso2();
+        void testarSucesso3();
+        void testarFalha();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUNome
+
+class TUNome{
+private:
+        //Valor valido para Nome
+        static const std::string NOME_VALIDO;
+        //Valor invalido para Nome
+        static const std::string NOME_1_INVALIDO;
+        //Valor invalido para Nome
+        static const std::string NOME_2_INVALIDO;
+        //Valor invalido para Nome
+        static const std::string NOME_3_INVALIDO;
+        //Valor invalido para Nome
+        static const std::string NOME_4_INVALIDO;
+
+        Nome* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha1();
+        void testarFalha2();
+        void testarFalha3();
+        void testarFalha4();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUNumero
+
+class TUNumero{
+private:
+        //Valor valido para Numero
+        static const std::string NUMERO_VALIDO;
+        //Valor invalido para Numero
+        static const std::string NUMERO_1_INVALIDO;
+        //Valor invalido para Numero
+        static const std::string NUMERO_2_INVALIDO;
+
+        Numero* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha1();
+        void testarFalha2();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUPrazo
+
+class TUPrazo{
+private:
+        //Prazo valido
+        static const int PRAZO_VALIDO = 36;
+        //Prazo invalido
+        static const int PRAZO_INVALIDO = 59;
+
+        Prazo* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUSenha
+
+class TUSenha{
+private:
+        //Valor valido para Senha
+        static const std::string SENHA_VALIDA;
+        //Valor invalido para Senha
+        static const std::string SENHA_1_INVALIDA;
+        //Valor invalido para Senha
+        static const std::string SENHA_2_INVALIDA;
+
+        Senha* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha1();
+        void testarFalha2();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUTaxa
+
+class TUTaxa{
+private:
+        //Taxa valido
+        static const int TAXA_VALIDA = 128;
+        //Taxa invalido
+        static const int TAXA_INVALIDA = 459;
+
+        Taxa* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUValor_Aplicacao
+
+class TUValor_Aplicacao{
+private:
+        //Valor_Aplicacao valido
+        static const int VALOR_APLICACAO_VALIDO = 658000.34;
+        //Valor_Aplicacao invalido
+        static const int VALOR_APLICACAO_INVALIDO = 56000000.98;
+
+        Valor_Aplicacao* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha();
+        void destruir();
+
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
+
+//Classe TUValor_Minimo
+
+class TUValor_Minimo{
+private:
+        //Valor_Minimo valido
+        static const int VALOR_MINIMO_VALIDO = 5000.00;
+        //Valor_Minimo invalido
+        static const int VALOR_MINIMO_INVALIDO = 37000.57;
+
+        Valor_Minimo* c1;
+
+        void construir();
+        void testarSucesso();
+        void testarFalha();
         void destruir();
 
 public:
