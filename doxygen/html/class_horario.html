@@ -88,16 +88,28 @@ $(document).ready(function(){initNavTree('class_horario.html',''); initResizable
 <div class="title">Horario Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>HORARIO.  
+ <a href="class_horario.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dominios_8h_source.html">Dominios.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2daf084639f09a871b27c76705d58a18"><td class="memItemLeft" align="right" valign="top"><a id="a2daf084639f09a871b27c76705d58a18"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHorario</b> (std::string)</td></tr>
+<tr class="memitem:a2daf084639f09a871b27c76705d58a18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a2daf084639f09a871b27c76705d58a18">setHorario</a> (std::string)</td></tr>
 <tr class="separator:a2daf084639f09a871b27c76705d58a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d8ace6915ac2103fc4e8ac31d45867"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#a93d8ace6915ac2103fc4e8ac31d45867">getHorario</a> ()</td></tr>
 <tr class="separator:a93d8ace6915ac2103fc4e8ac31d45867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>HORARIO. </p>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Classe Horario</h3>
+<ol type="1">
+<li><a class="el" href="class_classe.html" title="CLASSE.">Classe</a> utilizada para representar valor válido de horário.</li>
+<li>Os valores aceitos, consistem em valores entre as 13:00 e 17:00, no formato HH:MM </li>
+</ol>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a93d8ace6915ac2103fc4e8ac31d45867"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93d8ace6915ac2103fc4e8ac31d45867">&#9670;&nbsp;</a></span>getHorario()</h2>
 
@@ -120,6 +132,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setHorario</b> (std::
 
 </div>
 </div>
+<a id="a2daf084639f09a871b27c76705d58a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2daf084639f09a871b27c76705d58a18">&#9670;&nbsp;</a></span>setHorario()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Horario::setHorario </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>horario</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método <b> setHorario </b>.</p>
+<ul>
+<li>Armazena valor passado como parâmetro, caso seja válido;</li>
+<li>Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">horario</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_dominios_8h_source.html">Dominios.h</a></li>
 <li>Dominios.cpp</li>
@@ -130,7 +177,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setHorario</b> (std::
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_horario.html">Horario</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 19:15:33 for invest by
+    <li class="footer">Generated on Tue Sep 29 2020 21:14:08 for invest by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

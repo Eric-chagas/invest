@@ -88,16 +88,28 @@ $(document).ready(function(){initNavTree('class_taxa.html',''); initResizable();
 <div class="title">Taxa Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>TAXA.  
+ <a href="class_taxa.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dominios_8h_source.html">Dominios.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a580263c6991f4ee380f602d19886a7e2"><td class="memItemLeft" align="right" valign="top"><a id="a580263c6991f4ee380f602d19886a7e2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTaxa</b> (int)</td></tr>
+<tr class="memitem:a580263c6991f4ee380f602d19886a7e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_taxa.html#a580263c6991f4ee380f602d19886a7e2">setTaxa</a> (int)</td></tr>
 <tr class="separator:a580263c6991f4ee380f602d19886a7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb234d96a0d46bdde7ccd5e244e4b020"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_taxa.html#abb234d96a0d46bdde7ccd5e244e4b020">getTaxa</a> ()</td></tr>
 <tr class="separator:abb234d96a0d46bdde7ccd5e244e4b020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>TAXA. </p>
+<h3><a class="anchor" id="autotoc_md18"></a>
+Classe Taxa</h3>
+<ol type="1">
+<li><a class="el" href="class_classe.html" title="CLASSE.">Classe</a> utilizada para representar valor válido de <a class="el" href="class_taxa.html" title="TAXA.">Taxa</a>.</li>
+<li>Os valores aceitos são valores na faixa de 0 a 200. </li>
+</ol>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abb234d96a0d46bdde7ccd5e244e4b020"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb234d96a0d46bdde7ccd5e244e4b020">&#9670;&nbsp;</a></span>getTaxa()</h2>
 
@@ -120,6 +132,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setTaxa</b> (int)</td
 
 </div>
 </div>
+<a id="a580263c6991f4ee380f602d19886a7e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580263c6991f4ee380f602d19886a7e2">&#9670;&nbsp;</a></span>setTaxa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Taxa::setTaxa </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>taxa</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método <b> setTaxa </b>.</p>
+<ul>
+<li>Armazena valor passado como parâmetro, caso seja válido;</li>
+<li>Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">taxa</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_dominios_8h_source.html">Dominios.h</a></li>
 <li>Dominios.cpp</li>
@@ -130,7 +177,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setTaxa</b> (int)</td
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_taxa.html">Taxa</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 19:15:33 for invest by
+    <li class="footer">Generated on Tue Sep 29 2020 21:14:08 for invest by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

@@ -96,7 +96,10 @@ WARN_LOGFILE            = "/home/papercut/Documents/codeblocks/invest/doxygen/do
 # configuration options related to the input files
 #---------------------------------------------------------------------------
 INPUT                  = \
+	"../TUDominios.cpp" \
 	"../Dominios.cpp" \
+	"../main.cpp" \
+	"../TUDominios.h" \
 	"../Dominios.h" 
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          =

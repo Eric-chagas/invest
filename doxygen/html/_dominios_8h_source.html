@@ -391,147 +391,193 @@ $(document).ready(function(){initNavTree('_dominios_8h_source.html',''); initRes
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160; </div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;<span class="comment">//Classe HORARIO</span></div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160; </div>
-<div class="line"><a name="l00931"></a><span class="lineno"><a class="line" href="class_horario.html">  931</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_horario.html">Horario</a> {</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        <span class="comment">//Valores limite para as horas</span></div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> HORA_MAXIMA = 17;</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> HORA_MINIMA = 13;</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160; </div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        <span class="comment">//Horario no formato HH:MM</span></div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        std::string horario;</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;        <span class="keywordtype">void</span> validarHorario(std::string);</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        <span class="keywordtype">void</span> setHorario(std::string);</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160; </div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        std::string <a class="code" href="class_horario.html#a93d8ace6915ac2103fc4e8ac31d45867">getHorario</a>();</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;};</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160; </div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;<span class="comment">//Classe NOME</span></div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160; </div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160; </div>
-<div class="line"><a name="l00971"></a><span class="lineno"><a class="line" href="class_nome.html">  971</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nome.html">Nome</a> {</div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;        std::string nome;</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160; </div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;        <span class="comment">//Metodos que validam o texto</span></div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160; </div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160; </div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;        <span class="keywordtype">void</span> validaCaracteres(std::string);</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160; </div>
+<div class="line"><a name="l00941"></a><span class="lineno"><a class="line" href="class_horario.html">  941</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_horario.html">Horario</a> {</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;        <span class="comment">//Valores limite para as horas</span></div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> HORA_MAXIMA = 17;</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> HORA_MINIMA = 13;</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160; </div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        <span class="comment">//Horario no formato HH:MM</span></div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;        std::string horario;</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160; </div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160; </div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        <span class="keywordtype">void</span> validarHorario(std::string);</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160; </div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160; </div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_horario.html#a2daf084639f09a871b27c76705d58a18">setHorario</a>(std::string);</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160; </div>
 <div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160; </div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160; </div>
-<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;        <span class="keywordtype">void</span> validaSequencias(std::string);</div>
-<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160; </div>
-<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160; </div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160; </div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        <span class="keywordtype">void</span> validaNumerodeLetras(std::string);</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160; </div>
-<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160; </div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160; </div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        <span class="keywordtype">void</span> validaMaiuscula(std::string);</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160; </div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160; </div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160; </div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;        <span class="keywordtype">void</span> validarNome(std::string);</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160; </div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160; </div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_nome.html#a7228b0ad762740bf7e05707b86a778af">setNome</a>(std::string);</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160; </div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160; </div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;        std::string <a class="code" href="class_nome.html#acf79d4d5c223cf2bb3ddb2dae57ced9f">getNome</a>();</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;};</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160; </div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;<span class="comment">//Classe NUMERO</span></div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160; </div>
-<div class="line"><a name="l01090"></a><span class="lineno"><a class="line" href="class_numero.html"> 1090</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_numero.html">Numero</a> {</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="comment">//Numero no formato XXXXXX-Y, onde Y e digito verificador calculado utilizando o algoritmo Modulo de 11.</span></div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;        std::string numero;</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        <span class="keywordtype">void</span> verificarDigito(std::string);</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;        <span class="keywordtype">int</span> calculaDigito(std::string);</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;        <span class="keywordtype">void</span> setNumero(std::string);</div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160; </div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160; </div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;        std::string <a class="code" href="class_numero.html#a44b455d621fd4d89bde0d5a442aeb1cc">getNumero</a>();</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;};</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160; </div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;<span class="comment">//Classe PRAZO</span></div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160; </div>
-<div class="line"><a name="l01113"></a><span class="lineno"><a class="line" href="class_prazo.html"> 1113</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_prazo.html">Prazo</a> {</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;        <span class="comment">//Valores aceitos: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72.</span></div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;        <span class="keywordtype">int</span> prazo;</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        <span class="keywordtype">void</span> validarPrazo(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        <span class="keywordtype">void</span> setPrazo(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160; </div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        std::string <a class="code" href="class_horario.html#a93d8ace6915ac2103fc4e8ac31d45867">getHorario</a>();</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;};</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160; </div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;<span class="comment">//Classe NOME</span></div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160; </div>
+<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160; </div>
+<div class="line"><a name="l01011"></a><span class="lineno"><a class="line" href="class_nome.html"> 1011</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_nome.html">Nome</a> {</div>
+<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        std::string nome;</div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160; </div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;        <span class="comment">//Metodos que validam o texto</span></div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160; </div>
+<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160; </div>
+<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;        <span class="keywordtype">void</span> validaCaracteres(std::string);</div>
+<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160; </div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160; </div>
+<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        <span class="keywordtype">void</span> validaSequencias(std::string);</div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160; </div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160; </div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160; </div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;        <span class="keywordtype">void</span> validaNumerodeLetras(std::string);</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160; </div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160; </div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="keywordtype">void</span> validaMaiuscula(std::string);</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160; </div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160; </div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160; </div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;        <span class="keywordtype">void</span> validarNome(std::string);</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160; </div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160; </div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_nome.html#a7228b0ad762740bf7e05707b86a778af">setNome</a>(std::string);</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160; </div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160; </div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;        std::string <a class="code" href="class_nome.html#acf79d4d5c223cf2bb3ddb2dae57ced9f">getNome</a>();</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;};</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160; </div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;<span class="comment">//Classe NUMERO</span></div>
 <div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160; </div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_prazo.html#a46fb711854724a89cc7775596937ec63">getPrazo</a>();</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;};</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160; </div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;<span class="comment">//Classe SENHA</span></div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160; </div>
-<div class="line"><a name="l01135"></a><span class="lineno"><a class="line" href="class_senha.html"> 1135</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_senha.html">Senha</a> {</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;        <span class="comment">//Senha no formato XXXXXX</span></div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;        std::string senha;</div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;        <span class="keywordtype">void</span> validarSenha(std::string);</div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;        <span class="keywordtype">void</span> setSenha(std::string);</div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160; </div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160; </div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;        std::string <a class="code" href="class_senha.html#a766f97ce6f851cd1c3939f270351c2d5">getSenha</a>();</div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;};</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160; </div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;<span class="comment">//Classe TAXA</span></div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160; </div>
-<div class="line"><a name="l01157"></a><span class="lineno"><a class="line" href="class_taxa.html"> 1157</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_taxa.html">Taxa</a> {</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        <span class="keywordtype">int</span> taxa;</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        <span class="keywordtype">void</span> validarTaxa(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;        <span class="keywordtype">void</span> setTaxa(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160; </div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160; </div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_taxa.html#abb234d96a0d46bdde7ccd5e244e4b020">getTaxa</a>();</div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;};</div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160; </div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;<span class="comment">//Classe VALOR_APLICACAO</span></div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160; </div>
-<div class="line"><a name="l01178"></a><span class="lineno"><a class="line" href="class_valor___aplicacao.html"> 1178</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_valor___aplicacao.html">Valor_Aplicacao</a> {</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;        <span class="comment">//Valor em reais</span></div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> VALOR_MAXIMO;</div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;        <span class="keywordtype">float</span> valor;</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;        <span class="keywordtype">void</span> validarValor(<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;        <span class="keywordtype">void</span> setValor(<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160; </div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160; </div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_valor___aplicacao.html#a88ee7362789f7a337ed6cc1d202ad0ac">getValor</a>();</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;};</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160; </div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160; </div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160; </div>
+<div class="line"><a name="l01166"></a><span class="lineno"><a class="line" href="class_numero.html"> 1166</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_numero.html">Numero</a> {</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;        <span class="comment">//Numero no formato XXXXXX-Y, onde Y e digito verificador calculado utilizando o algoritmo Modulo de 11.</span></div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;        std::string numero;</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160; </div>
 <div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160; </div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;<span class="comment">//Classe VALOR_MINIMO</span></div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160; </div>
-<div class="line"><a name="l01201"></a><span class="lineno"><a class="line" href="class_valor___minimo.html"> 1201</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_valor___minimo.html">Valor_Minimo</a> {</div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        <span class="comment">//Valores aceitos: 1.000,00, 5.000,00, 10.000 ou 50.000,00</span></div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;        <span class="keywordtype">float</span> valor;</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;        <span class="keywordtype">void</span> validarValor(<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;        <span class="keywordtype">void</span> setValor(<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160; </div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160; </div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_valor___minimo.html#a669a2463f3bd9a854325bebeb41df448">getValor</a>();</div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;};</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160; </div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;<span class="preprocessor">#endif // DOMINIOS_H_INCLUDED</span></div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;        <span class="keywordtype">void</span> verificarDigito(std::string);</div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160; </div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160; </div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_numero.html#afe93f1d288189bb8bc8cf6f385b761e6">calculaDigito</a>(std::string);</div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160; </div>
+<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160; </div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_numero.html#a89162510a0a9f1134f5d77b8d517ef87">setNumero</a>(std::string);</div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160; </div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;        std::string <a class="code" href="class_numero.html#a44b455d621fd4d89bde0d5a442aeb1cc">getNumero</a>();</div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;};</div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;<span class="comment">//Classe PRAZO</span></div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160; </div>
+<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160; </div>
+<div class="line"><a name="l01259"></a><span class="lineno"><a class="line" href="class_prazo.html"> 1259</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_prazo.html">Prazo</a> {</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;        <span class="comment">//Valores aceitos: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72.</span></div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;        <span class="keywordtype">int</span> prazo;</div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160; </div>
+<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160; </div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;        <span class="keywordtype">void</span> validarPrazo(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160; </div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160; </div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_prazo.html#aa3334052b8be3af3a2b63415f8b25024">setPrazo</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160; </div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160; </div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_prazo.html#a46fb711854724a89cc7775596937ec63">getPrazo</a>();</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;};</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160; </div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;<span class="comment">//Classe SENHA</span></div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160; </div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160; </div>
+<div class="line"><a name="l01321"></a><span class="lineno"><a class="line" href="class_senha.html"> 1321</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_senha.html">Senha</a> {</div>
+<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        <span class="comment">//Senha no formato XXXXXX</span></div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;        std::string senha;</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160; </div>
+<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160; </div>
+<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;        <span class="keywordtype">void</span> validarSenha(std::string);</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160; </div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160; </div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160; </div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_senha.html#aaadb76fb4d61a0db2766efc3dfbc6a19">setSenha</a>(std::string);</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160; </div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160; </div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        std::string <a class="code" href="class_senha.html#a766f97ce6f851cd1c3939f270351c2d5">getSenha</a>();</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;};</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160; </div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;<span class="comment">//Classe TAXA</span></div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160; </div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160; </div>
+<div class="line"><a name="l01384"></a><span class="lineno"><a class="line" href="class_taxa.html"> 1384</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_taxa.html">Taxa</a> {</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;        <span class="keywordtype">int</span> taxa;</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160; </div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160; </div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160; </div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        <span class="keywordtype">void</span> validarTaxa(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160; </div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160; </div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_taxa.html#a580263c6991f4ee380f602d19886a7e2">setTaxa</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160; </div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160; </div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_taxa.html#abb234d96a0d46bdde7ccd5e244e4b020">getTaxa</a>();</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;};</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160; </div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;<span class="comment">//Classe VALOR_APLICACAO</span></div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160; </div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160; </div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160; </div>
+<div class="line"><a name="l01447"></a><span class="lineno"><a class="line" href="class_valor___aplicacao.html"> 1447</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_valor___aplicacao.html">Valor_Aplicacao</a> {</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;        <span class="comment">//Valor em reais</span></div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> VALOR_MAXIMO;</div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;        <span class="keywordtype">float</span> valor;</div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160; </div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160; </div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160; </div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        <span class="keywordtype">void</span> validarValor(<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160; </div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160; </div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160; </div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_valor___aplicacao.html#a5420b961d03610a82a1dab91b20010cc">setValor</a>(<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160; </div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160; </div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_valor___aplicacao.html#a88ee7362789f7a337ed6cc1d202ad0ac">getValor</a>();</div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;};</div>
+<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160; </div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;<span class="comment">//Classe VALOR_MINIMO</span></div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160; </div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160; </div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160; </div>
+<div class="line"><a name="l01513"></a><span class="lineno"><a class="line" href="class_valor___minimo.html"> 1513</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_valor___minimo.html">Valor_Minimo</a> {</div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;        <span class="comment">//Valores aceitos: 1.000,00, 5.000,00, 10.000 ou 50.000,00</span></div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;        <span class="keywordtype">float</span> valor;</div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160; </div>
+<div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160; </div>
+<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;        <span class="keywordtype">void</span> validarValor(<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160; </div>
+<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160; </div>
+<div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_valor___minimo.html#a7c90a9c2326e4746fbff46ac0113258a">setValor</a>(<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160; </div>
+<div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160; </div>
+<div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="class_valor___minimo.html#a669a2463f3bd9a854325bebeb41df448">getValor</a>();</div>
+<div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;};</div>
+<div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160; </div>
+<div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;<span class="preprocessor">#endif // DOMINIOS_H_INCLUDED</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_codigo___banco_html_a8a8590a68932210926f48b985492165c"><div class="ttname"><a href="class_codigo___banco.html#a8a8590a68932210926f48b985492165c">Codigo_Banco::setCodigo</a></div><div class="ttdeci">void setCodigo(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:136</div></div>
-<div class="ttc" id="aclass_taxa_html"><div class="ttname"><a href="class_taxa.html">Taxa</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:1157</div></div>
+<div class="ttc" id="aclass_taxa_html"><div class="ttname"><a href="class_taxa.html">Taxa</a></div><div class="ttdoc">TAXA.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1384</div></div>
+<div class="ttc" id="aclass_senha_html_aaadb76fb4d61a0db2766efc3dfbc6a19"><div class="ttname"><a href="class_senha.html#aaadb76fb4d61a0db2766efc3dfbc6a19">Senha::setSenha</a></div><div class="ttdeci">void setSenha(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:659</div></div>
 <div class="ttc" id="aclass_codigo___produto_html"><div class="ttname"><a href="class_codigo___produto.html">Codigo_Produto</a></div><div class="ttdoc">CODIGO_PRODUTO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:462</div></div>
 <div class="ttc" id="aclass_codigo___banco_html"><div class="ttname"><a href="class_codigo___banco.html">Codigo_Banco</a></div><div class="ttdoc">CODIGO_BANCO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:387</div></div>
 <div class="ttc" id="aclass_classe_html_a9ffdc5ca56ffb487fa62c6527dc19c6a"><div class="ttname"><a href="class_classe.html#a9ffdc5ca56ffb487fa62c6527dc19c6a">Classe::setClasse</a></div><div class="ttdeci">void setClasse(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:49</div></div>
@@ -540,23 +586,28 @@ $(document).ready(function(){initNavTree('_dominios_8h_source.html',''); initRes
 <div class="ttc" id="aclass_cep_html_a5996385293b801a2f6ecaba8509801b9"><div class="ttname"><a href="class_cep.html#a5996385293b801a2f6ecaba8509801b9">Cep::setCep</a></div><div class="ttdeci">void setCep(int)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:22</div></div>
 <div class="ttc" id="aclass_cep_html"><div class="ttname"><a href="class_cep.html">Cep</a></div><div class="ttdoc">CEP.</div><div class="ttdef"><b>Definition:</b> Dominios.h:38</div></div>
 <div class="ttc" id="aclass_cep_html_a328f2f8018c0a0719fcfec286bec467d"><div class="ttname"><a href="class_cep.html#a328f2f8018c0a0719fcfec286bec467d">Cep::getCep</a></div><div class="ttdeci">int getCep()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:26</div></div>
-<div class="ttc" id="aclass_horario_html"><div class="ttname"><a href="class_horario.html">Horario</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:931</div></div>
-<div class="ttc" id="aclass_valor___minimo_html"><div class="ttname"><a href="class_valor___minimo.html">Valor_Minimo</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:1201</div></div>
-<div class="ttc" id="aclass_senha_html"><div class="ttname"><a href="class_senha.html">Senha</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:1135</div></div>
+<div class="ttc" id="aclass_numero_html_a89162510a0a9f1134f5d77b8d517ef87"><div class="ttname"><a href="class_numero.html#a89162510a0a9f1134f5d77b8d517ef87">Numero::setNumero</a></div><div class="ttdeci">void setNumero(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:610</div></div>
+<div class="ttc" id="aclass_horario_html"><div class="ttname"><a href="class_horario.html">Horario</a></div><div class="ttdoc">HORARIO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:941</div></div>
+<div class="ttc" id="aclass_valor___minimo_html"><div class="ttname"><a href="class_valor___minimo.html">Valor_Minimo</a></div><div class="ttdoc">VALOR_MINIMO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1513</div></div>
+<div class="ttc" id="aclass_senha_html"><div class="ttname"><a href="class_senha.html">Senha</a></div><div class="ttdoc">SENHA.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1321</div></div>
 <div class="ttc" id="aclass_codigo___produto_html_ad4d75db1d2acebcd64ac7bae400d1032"><div class="ttname"><a href="class_codigo___produto.html#ad4d75db1d2acebcd64ac7bae400d1032">Codigo_Produto::getCodigo</a></div><div class="ttdeci">std::string getCodigo()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:170</div></div>
 <div class="ttc" id="aclass_valor___minimo_html_a669a2463f3bd9a854325bebeb41df448"><div class="ttname"><a href="class_valor___minimo.html#a669a2463f3bd9a854325bebeb41df448">Valor_Minimo::getValor</a></div><div class="ttdeci">float getValor()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:715</div></div>
-<div class="ttc" id="aclass_numero_html"><div class="ttname"><a href="class_numero.html">Numero</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:1090</div></div>
+<div class="ttc" id="aclass_numero_html"><div class="ttname"><a href="class_numero.html">Numero</a></div><div class="ttdoc">NUMERO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1166</div></div>
 <div class="ttc" id="aclass_valor___aplicacao_html_a88ee7362789f7a337ed6cc1d202ad0ac"><div class="ttname"><a href="class_valor___aplicacao.html#a88ee7362789f7a337ed6cc1d202ad0ac">Valor_Aplicacao::getValor</a></div><div class="ttdeci">float getValor()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:699</div></div>
 <div class="ttc" id="aclass_data_html_afe290f1411527568a08ede019a047694"><div class="ttname"><a href="class_data.html#afe290f1411527568a08ede019a047694">Data::setData</a></div><div class="ttdeci">void setData(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:316</div></div>
 <div class="ttc" id="aclass_classe_html_abe6717c2d1026cefce10aafa24451037"><div class="ttname"><a href="class_classe.html#abe6717c2d1026cefce10aafa24451037">Classe::getClasse</a></div><div class="ttdeci">std::string getClasse()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:53</div></div>
 <div class="ttc" id="aclass_classe_html"><div class="ttname"><a href="class_classe.html">Classe</a></div><div class="ttdoc">CLASSE.</div><div class="ttdef"><b>Definition:</b> Dominios.h:137</div></div>
+<div class="ttc" id="aclass_taxa_html_a580263c6991f4ee380f602d19886a7e2"><div class="ttname"><a href="class_taxa.html#a580263c6991f4ee380f602d19886a7e2">Taxa::setTaxa</a></div><div class="ttdeci">void setTaxa(int)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:676</div></div>
 <div class="ttc" id="aclass_endereco_html_a91ee1b5d83bed079808f0239145ceba5"><div class="ttname"><a href="class_endereco.html#a91ee1b5d83bed079808f0239145ceba5">Endereco::getEndereco</a></div><div class="ttdeci">std::string getEndereco()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:451</div></div>
 <div class="ttc" id="aclass_codigo___produto_html_af94c73be512b73a2095d84da720de246"><div class="ttname"><a href="class_codigo___produto.html#af94c73be512b73a2095d84da720de246">Codigo_Produto::setCodigo</a></div><div class="ttdeci">void setCodigo(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:166</div></div>
-<div class="ttc" id="aclass_nome_html"><div class="ttname"><a href="class_nome.html">Nome</a></div><div class="ttdoc">NOME.</div><div class="ttdef"><b>Definition:</b> Dominios.h:971</div></div>
+<div class="ttc" id="aclass_nome_html"><div class="ttname"><a href="class_nome.html">Nome</a></div><div class="ttdoc">NOME.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1011</div></div>
 <div class="ttc" id="aclass_data_html"><div class="ttname"><a href="class_data.html">Data</a></div><div class="ttdoc">DATA.</div><div class="ttdef"><b>Definition:</b> Dominios.h:616</div></div>
 <div class="ttc" id="aclass_prazo_html_a46fb711854724a89cc7775596937ec63"><div class="ttname"><a href="class_prazo.html#a46fb711854724a89cc7775596937ec63">Prazo::getPrazo</a></div><div class="ttdeci">int getPrazo()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:632</div></div>
 <div class="ttc" id="aclass_data_html_a76ac4ac268da92dc15f7e69e8601b2ae"><div class="ttname"><a href="class_data.html#a76ac4ac268da92dc15f7e69e8601b2ae">Data::getData</a></div><div class="ttdeci">std::string getData()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:321</div></div>
-<div class="ttc" id="aclass_prazo_html"><div class="ttname"><a href="class_prazo.html">Prazo</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:1113</div></div>
+<div class="ttc" id="aclass_prazo_html_aa3334052b8be3af3a2b63415f8b25024"><div class="ttname"><a href="class_prazo.html#aa3334052b8be3af3a2b63415f8b25024">Prazo::setPrazo</a></div><div class="ttdeci">void setPrazo(int)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:628</div></div>
+<div class="ttc" id="aclass_valor___aplicacao_html_a5420b961d03610a82a1dab91b20010cc"><div class="ttname"><a href="class_valor___aplicacao.html#a5420b961d03610a82a1dab91b20010cc">Valor_Aplicacao::setValor</a></div><div class="ttdeci">void setValor(float)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:695</div></div>
+<div class="ttc" id="aclass_numero_html_afe93f1d288189bb8bc8cf6f385b761e6"><div class="ttname"><a href="class_numero.html#afe93f1d288189bb8bc8cf6f385b761e6">Numero::calculaDigito</a></div><div class="ttdeci">int calculaDigito(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:556</div></div>
+<div class="ttc" id="aclass_prazo_html"><div class="ttname"><a href="class_prazo.html">Prazo</a></div><div class="ttdoc">PRAZO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1259</div></div>
 <div class="ttc" id="aclass_emissor_html_a0670f588033dde882cdaf5e2b89a69ff"><div class="ttname"><a href="class_emissor.html#a0670f588033dde882cdaf5e2b89a69ff">Emissor::setEmissor</a></div><div class="ttdeci">void setEmissor(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:382</div></div>
 <div class="ttc" id="aclass_codigo___aplicacao_html_abf2e224d58197c09979ab34d49cfb1b0"><div class="ttname"><a href="class_codigo___aplicacao.html#abf2e224d58197c09979ab34d49cfb1b0">Codigo_Aplicacao::setCodigo</a></div><div class="ttdeci">void setCodigo(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:109</div></div>
 <div class="ttc" id="aclass_numero_html_a44b455d621fd4d89bde0d5a442aeb1cc"><div class="ttname"><a href="class_numero.html#a44b455d621fd4d89bde0d5a442aeb1cc">Numero::getNumero</a></div><div class="ttdeci">std::string getNumero()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:614</div></div>
@@ -564,9 +615,10 @@ $(document).ready(function(){initNavTree('_dominios_8h_source.html',''); initRes
 <div class="ttc" id="aclass_nome_html_a7228b0ad762740bf7e05707b86a778af"><div class="ttname"><a href="class_nome.html#a7228b0ad762740bf7e05707b86a778af">Nome::setNome</a></div><div class="ttdeci">void setNome(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:545</div></div>
 <div class="ttc" id="aclass_codigo___agencia_html"><div class="ttname"><a href="class_codigo___agencia.html">Codigo_Agencia</a></div><div class="ttdoc">CODIGO_AGENCIA.</div><div class="ttdef"><b>Definition:</b> Dominios.h:211</div></div>
 <div class="ttc" id="aclass_nome_html_acf79d4d5c223cf2bb3ddb2dae57ced9f"><div class="ttname"><a href="class_nome.html#acf79d4d5c223cf2bb3ddb2dae57ced9f">Nome::getNome</a></div><div class="ttdeci">std::string getNome()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:549</div></div>
-<div class="ttc" id="aclass_valor___aplicacao_html"><div class="ttname"><a href="class_valor___aplicacao.html">Valor_Aplicacao</a></div><div class="ttdef"><b>Definition:</b> Dominios.h:1178</div></div>
+<div class="ttc" id="aclass_valor___aplicacao_html"><div class="ttname"><a href="class_valor___aplicacao.html">Valor_Aplicacao</a></div><div class="ttdoc">VALOR_APLICACAO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:1447</div></div>
 <div class="ttc" id="aclass_taxa_html_abb234d96a0d46bdde7ccd5e244e4b020"><div class="ttname"><a href="class_taxa.html#abb234d96a0d46bdde7ccd5e244e4b020">Taxa::getTaxa</a></div><div class="ttdeci">int getTaxa()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:680</div></div>
 <div class="ttc" id="aclass_codigo___agencia_html_ad08a193c086bf328cda28855103c42ac"><div class="ttname"><a href="class_codigo___agencia.html#ad08a193c086bf328cda28855103c42ac">Codigo_Agencia::getCodigo</a></div><div class="ttdeci">std::string getCodigo()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:83</div></div>
+<div class="ttc" id="aclass_horario_html_a2daf084639f09a871b27c76705d58a18"><div class="ttname"><a href="class_horario.html#a2daf084639f09a871b27c76705d58a18">Horario::setHorario</a></div><div class="ttdeci">void setHorario(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:479</div></div>
 <div class="ttc" id="aclass_endereco_html_a7b5cf5a4cb1fdb096eeede8dfd11ecf3"><div class="ttname"><a href="class_endereco.html#a7b5cf5a4cb1fdb096eeede8dfd11ecf3">Endereco::setEndereco</a></div><div class="ttdeci">void setEndereco(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:446</div></div>
 <div class="ttc" id="aclass_cpf_html"><div class="ttname"><a href="class_cpf.html">Cpf</a></div><div class="ttdoc">CPF.</div><div class="ttdef"><b>Definition:</b> Dominios.h:544</div></div>
 <div class="ttc" id="aclass_codigo___aplicacao_html"><div class="ttname"><a href="class_codigo___aplicacao.html">Codigo_Aplicacao</a></div><div class="ttdoc">CODIGO_APLICACAO.</div><div class="ttdef"><b>Definition:</b> Dominios.h:295</div></div>
@@ -575,13 +627,14 @@ $(document).ready(function(){initNavTree('_dominios_8h_source.html',''); initRes
 <div class="ttc" id="aclass_codigo___agencia_html_a4c0f1e675d6a4e8f2263c59e35df3848"><div class="ttname"><a href="class_codigo___agencia.html#a4c0f1e675d6a4e8f2263c59e35df3848">Codigo_Agencia::setCodigo</a></div><div class="ttdeci">void setCodigo(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:79</div></div>
 <div class="ttc" id="aclass_emissor_html"><div class="ttname"><a href="class_emissor.html">Emissor</a></div><div class="ttdoc">EMISSOR.</div><div class="ttdef"><b>Definition:</b> Dominios.h:697</div></div>
 <div class="ttc" id="aclass_codigo___aplicacao_html_a5adca7d14e4f7de36d3f07a8b2e6fef8"><div class="ttname"><a href="class_codigo___aplicacao.html#a5adca7d14e4f7de36d3f07a8b2e6fef8">Codigo_Aplicacao::getCodigo</a></div><div class="ttdeci">std::string getCodigo()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:113</div></div>
+<div class="ttc" id="aclass_valor___minimo_html_a7c90a9c2326e4746fbff46ac0113258a"><div class="ttname"><a href="class_valor___minimo.html#a7c90a9c2326e4746fbff46ac0113258a">Valor_Minimo::setValor</a></div><div class="ttdeci">void setValor(float)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:711</div></div>
 <div class="ttc" id="aclass_cpf_html_adaddd5f6557bf70b37184d353f2bc8d1"><div class="ttname"><a href="class_cpf.html#adaddd5f6557bf70b37184d353f2bc8d1">Cpf::setCpf</a></div><div class="ttdeci">void setCpf(std::string)</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:253</div></div>
 <div class="ttc" id="aclass_cpf_html_ad7e0e3d4c1992dcb90719b8fd4dbada5"><div class="ttname"><a href="class_cpf.html#ad7e0e3d4c1992dcb90719b8fd4dbada5">Cpf::getCpf</a></div><div class="ttdeci">std::string getCpf()</div><div class="ttdef"><b>Definition:</b> Dominios.cpp:257</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>Dominios.h</b></li>
-    <li class="footer">Generated on Tue Sep 29 2020 19:15:33 for invest by
+    <li class="footer">Generated on Tue Sep 29 2020 21:14:08 for invest by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

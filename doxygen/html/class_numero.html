@@ -88,19 +88,80 @@ $(document).ready(function(){initNavTree('class_numero.html',''); initResizable(
 <div class="title">Numero Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>NUMERO.  
+ <a href="class_numero.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dominios_8h_source.html">Dominios.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afe93f1d288189bb8bc8cf6f385b761e6"><td class="memItemLeft" align="right" valign="top"><a id="afe93f1d288189bb8bc8cf6f385b761e6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>calculaDigito</b> (std::string)</td></tr>
+<tr class="memitem:afe93f1d288189bb8bc8cf6f385b761e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_numero.html#afe93f1d288189bb8bc8cf6f385b761e6">calculaDigito</a> (std::string)</td></tr>
 <tr class="separator:afe93f1d288189bb8bc8cf6f385b761e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89162510a0a9f1134f5d77b8d517ef87"><td class="memItemLeft" align="right" valign="top"><a id="a89162510a0a9f1134f5d77b8d517ef87"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setNumero</b> (std::string)</td></tr>
+<tr class="memitem:a89162510a0a9f1134f5d77b8d517ef87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_numero.html#a89162510a0a9f1134f5d77b8d517ef87">setNumero</a> (std::string)</td></tr>
 <tr class="separator:a89162510a0a9f1134f5d77b8d517ef87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44b455d621fd4d89bde0d5a442aeb1cc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_numero.html#a44b455d621fd4d89bde0d5a442aeb1cc">getNumero</a> ()</td></tr>
 <tr class="separator:a44b455d621fd4d89bde0d5a442aeb1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>NUMERO. </p>
+<h3><a class="anchor" id="autotoc_md14"></a>
+Classe Numero</h3>
+<ol type="1">
+<li><a class="el" href="class_classe.html" title="CLASSE.">Classe</a> utilizada para representar valor válido de Número(de conta).</li>
+<li>Os valores aceitos, consistem no formato XXXXXX-Y, onde:<ul>
+<li>X e Y representam dígito (0-9);</li>
+<li>Y é dígito verificador de validade do número.</li>
+<li>A validação de Y ocorre por meio do algorítmo de cálculo de digito verificador, utilizado por muitos bancos chamado Módulo de 11.</li>
+</ul>
+</li>
+</ol>
+<h4><a class="anchor" id="autotoc_md15"></a>
+Método verificarDigito.</h4>
+<ul>
+<li>Realiza a validação do parâmetro passado, de acordo com o algoritmo de cálculo do dígito verificador Módulo de 11, que consiste em:<ul>
+<li><p class="startli">1. Multiplicar todos os números do número(sem o dígito) do dígito menos significativo para o mais significativo respectivamente por uma sequência crescente de números que se inicia em 2, e segue de acordo com a quantidade de dígitos presentes no número a ser testado;</p>
+<p class="startli">Por exemplo: Para o atributo numero com formato XXXXXX-Y, remove-se o digito verificador Y, e multiplicamos cada dígito da direita para a esquerda respectivamente por 2, 3, 4, 5, 6 e 7;</p><ol type="1">
+<li>O resultado das multiplicações é somado;</li>
+<li>A soma resultante, é multiplicada por 10 e dividida por 11;</li>
+<li>O resto dessa divisão corresponde ao dígito verificador.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Lança exceção caso o parâmetro passado corresponda a um número inválido. </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afe93f1d288189bb8bc8cf6f385b761e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe93f1d288189bb8bc8cf6f385b761e6">&#9670;&nbsp;</a></span>calculaDigito()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Numero::calculaDigito </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>numero</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método <b> verificarDigito </b>.</p>
+<ul>
+<li>Realiza o cálculo do dígito verificador utilizando um número no formato XXXXXX sem o dígito, e o algorítmo Módulo de 11 (explicado anteriormente).</li>
+<li>Retorna o resto da divisão no fim do algorítmo, que corresponde ao dígito válido para o número passado como parâmetro.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numero</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>resto </dd></dl>
+
+</div>
+</div>
 <a id="a44b455d621fd4d89bde0d5a442aeb1cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a44b455d621fd4d89bde0d5a442aeb1cc">&#9670;&nbsp;</a></span>getNumero()</h2>
 
@@ -123,6 +184,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setNumero</b> (std::s
 
 </div>
 </div>
+<a id="a89162510a0a9f1134f5d77b8d517ef87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89162510a0a9f1134f5d77b8d517ef87">&#9670;&nbsp;</a></span>setNumero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Numero::setNumero </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>numero</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método <b> setNumero </b>.</p>
+<ul>
+<li>Armazena valor passado como parâmetro, caso seja válido;</li>
+<li>Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numero</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_dominios_8h_source.html">Dominios.h</a></li>
 <li>Dominios.cpp</li>
@@ -133,7 +229,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setNumero</b> (std::s
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_numero.html">Numero</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 19:15:33 for invest by
+    <li class="footer">Generated on Tue Sep 29 2020 21:14:08 for invest by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

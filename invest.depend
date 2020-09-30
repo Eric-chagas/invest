@@ -4,7 +4,7 @@
 	"Dominios.h"
 	"TUDominios.h"
 
-1601405493 /home/papercut/Documents/codeblocks/invest/Dominios.h
+1601424531 /home/papercut/Documents/codeblocks/invest/Dominios.h
 	<iostream>
 	<stdexcept>
 
@@ -12,7 +12,7 @@
 	<iostream>
 	<stdexcept>
 
-1601317530 source:/home/papercut/Documents/codeblocks/invest/Dominios.cpp
+1601400716 source:/home/papercut/Documents/codeblocks/invest/Dominios.cpp
 	"Dominios.h"
 	<iostream>
 	<stdexcept>

@@ -928,6 +928,16 @@ public:
 
 //Classe HORARIO
 
+/// \brief HORARIO
+///
+///
+/// ### Classe Horario #
+///
+/// 1. Classe utilizada para representar valor válido de horário.
+///
+/// 2. Os valores aceitos, consistem em valores entre as 13:00 e 17:00, no formato HH:MM
+///
+
 class Horario {
 private:
         //Valores limite para as horas
@@ -936,8 +946,38 @@ private:
 
         //Horario no formato HH:MM
         std::string horario;
+
+        ///
+        /// Método <b> validarHorario </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Horario.
+        ///
+        ///
+        /// @param horario
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarHorario(std::string);
 public:
+
+        ///
+        /// Método <b> setHorario </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param horario
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setHorario(std::string);
 
         ///
@@ -1087,13 +1127,109 @@ public:
 
 //Classe NUMERO
 
+
+/// \brief NUMERO
+///
+///
+/// ### Classe Numero #
+///
+/// 1. Classe utilizada para representar valor válido de Número(de conta).
+///
+/// 2. Os valores aceitos, consistem no formato XXXXXX-Y, onde:
+///    + X e Y representam dígito (0-9);
+///    + Y é dígito verificador de validade do número.
+///    + A validação de Y ocorre por meio do algorítmo de cálculo de digito verificador, utilizado por muitos bancos chamado Módulo de 11.
+///
+/// #### Método verificarDigito. #
+///
+///
+/// - Realiza a validação do parâmetro passado, de acordo com o algoritmo de cálculo do dígito verificador Módulo de 11, que consiste em:
+///   + 1. Multiplicar todos os números do número(sem o dígito) do dígito menos significativo para o mais significativo
+///        respectivamente por uma sequência crescente de números que se inicia em 2, e segue de acordo com a quantidade de
+///        dígitos presentes no número a ser testado;
+///
+///        Por exemplo: Para o atributo numero com formato XXXXXX-Y, remove-se o digito verificador Y, e multiplicamos cada dígito
+///        da direita para a esquerda respectivamente por 2, 3, 4, 5, 6 e 7;
+///
+///     2. O resultado das multiplicações é somado;
+///
+///     3. A soma resultante, é multiplicada por 10 e dividida por 11;
+///
+///     4. O resto dessa divisão corresponde ao dígito verificador.
+///
+///
+/// - Lança exceção caso o parâmetro passado corresponda a um número inválido.
+///
+///
+
+
 class Numero {
 private:
         //Numero no formato XXXXXX-Y, onde Y e digito verificador calculado utilizando o algoritmo Modulo de 11.
         std::string numero;
+
+        ///
+        /// Método <b> verificarDigito </b>.
+        ///
+        ///
+        /// - Realiza a validação do parâmetro passado, de acordo com o algoritmo de cálculo do dígito verificador Módulo de 11, que consiste em:
+        ///   + 1. Multiplicar todos os números do número(sem o dígito) do dígito menos significativo para o mais significativo
+        ///        respectivamente por uma sequência crescente de números que se inicia em 2, e segue de acordo com a quantidade de
+        ///        dígitos presentes no número a ser testado;
+        ///
+        ///        Por exemplo: Para o atributo numero com formato XXXXXX-Y, remove-se o digito verificador Y, e multiplicamos cada dígito
+        ///        da direita para a esquerda respectivamente por 2, 3, 4, 5, 6 e 7;
+        ///
+        ///     2. O resultado das multiplicações é somado;
+        ///
+        ///     3. A soma resultante, é multiplicada por 10 e dividida por 11;
+        ///
+        ///     4. O resto dessa divisão corresponde ao dígito verificador.
+        ///
+        ///
+        /// - Lança exceção caso o parâmetro passado corresponda a um número inválido.
+        ///
+        ///
+        /// @param numero
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void verificarDigito(std::string);
 public:
+
+        ///
+        /// Método <b> verificarDigito </b>.
+        ///
+        ///
+        /// - Realiza o cálculo do dígito verificador utilizando um número no formato XXXXXX sem o dígito, e o algorítmo Módulo de 11 (explicado anteriormente).
+        ///
+        /// - Retorna o resto da divisão no fim do algorítmo, que corresponde ao dígito válido para o número passado como parâmetro.
+        ///
+        ///
+        /// @param numero
+        ///
+        /// @return resto
+        ///
+        ///
+
         int calculaDigito(std::string);
+
+        ///
+        /// Método <b> setNumero </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param numero
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setNumero(std::string);
 
         ///
@@ -1110,12 +1246,52 @@ public:
 
 //Classe PRAZO
 
+/// \brief PRAZO
+///
+///
+/// ### Classe Prazo #
+///
+/// 1. Classe utilizada para representar valor válido de prazo.
+///
+/// 2. Os valores aceitos são: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72.
+///
+
 class Prazo {
 private:
         //Valores aceitos: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72.
         int prazo;
+
+        ///
+        /// Método <b> validarPrazo </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Prazo
+        ///
+        ///
+        /// @param prazo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarPrazo(int);
 public:
+
+        ///
+        /// Método <b> setPrazo </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param prazo
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setPrazo(int);
 
         ///
@@ -1132,12 +1308,53 @@ public:
 
 //Classe SENHA
 
+/// \brief SENHA
+///
+///
+/// ### Classe Senha #
+///
+/// 1. Classe utilizada para representar valor válido de Senha.
+///
+/// 2. Os valores aceitos são Formato XXXXXX onde cada X é dígito (0 – 9) e não há dígito repetido.
+///
+
 class Senha {
 private:
         //Senha no formato XXXXXX
         std::string senha;
+
+        ///
+        /// Método <b> validarSenha </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Senha
+        ///
+        ///
+        /// @param senha
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarSenha(std::string);
 public:
+
+        ///
+        /// Método <b> setSenha </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param senha
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void setSenha(std::string);
 
         ///
@@ -1154,11 +1371,52 @@ public:
 
 //Classe TAXA
 
+/// \brief TAXA
+///
+///
+/// ### Classe Taxa #
+///
+/// 1. Classe utilizada para representar valor válido de Taxa.
+///
+/// 2. Os valores aceitos são valores na faixa de 0 a 200.
+///
+
 class Taxa {
 private:
         int taxa;
+
+        ///
+        /// Método <b> validarTaxa </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Taxa
+        ///
+        ///
+        /// @param taxa
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
+
         void validarTaxa(int);
 public:
+
+        ///
+        /// Método <b> setTaxa </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param taxa
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setTaxa(int);
 
         ///
@@ -1175,13 +1433,56 @@ public:
 
 //Classe VALOR_APLICACAO
 
+
+/// \brief VALOR_APLICACAO
+///
+///
+/// ### Classe Valor_Aplicacao #
+///
+/// 1. Classe utilizada para representar valor válido de Aplicação.
+///
+/// 2. Os valores aceitos são valores na faixa de 0 a 1.000.000,00.
+///
+
 class Valor_Aplicacao {
 private:
         //Valor em reais
         static const float VALOR_MAXIMO;
         float valor;
+
+
+        ///
+        /// Método <b> validarValor </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Valor_Aplicacao
+        ///
+        ///
+        /// @param valor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarValor(float);
 public:
+
+
+        ///
+        /// Método <b> setValor </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param valor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setValor(float);
 
         ///
@@ -1198,12 +1499,53 @@ public:
 
 //Classe VALOR_MINIMO
 
+
+/// \brief VALOR_MINIMO
+///
+///
+/// ### Classe Valor_Minimo #
+///
+/// 1. Classe utilizada para representar valor mínimo válido;
+///
+/// 2. Os valores aceitos são 1.000,00, 5.000,00, 10.000 ou 50.000,00.
+///
+
 class Valor_Minimo {
 private:
         //Valores aceitos: 1.000,00, 5.000,00, 10.000 ou 50.000,00
         float valor;
+
+        ///
+        /// Método <b> validarValor </b>.
+        ///
+        /// - Realiza a validação do parâmetro passado.
+        ///
+        /// - Lança exceção em caso de o parâmetro passado não corresponder com os requisitos especificados para a classe Valor_Minimo
+        ///
+        ///
+        /// @param valor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void validarValor(float);
 public:
+
+        ///
+        /// Método <b> setValor </b>.
+        ///
+        ///
+        /// - Armazena valor passado como parâmetro, caso seja válido;
+        ///
+        /// - Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.
+        ///
+        /// @param valor
+        ///
+        /// @throw invalid_argument
+        ///
+        ///
+
         void setValor(float);
 
         ///

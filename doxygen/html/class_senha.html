@@ -88,16 +88,28 @@ $(document).ready(function(){initNavTree('class_senha.html',''); initResizable()
 <div class="title">Senha Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>SENHA.  
+ <a href="class_senha.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dominios_8h_source.html">Dominios.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaadb76fb4d61a0db2766efc3dfbc6a19"><td class="memItemLeft" align="right" valign="top"><a id="aaadb76fb4d61a0db2766efc3dfbc6a19"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSenha</b> (std::string)</td></tr>
+<tr class="memitem:aaadb76fb4d61a0db2766efc3dfbc6a19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#aaadb76fb4d61a0db2766efc3dfbc6a19">setSenha</a> (std::string)</td></tr>
 <tr class="separator:aaadb76fb4d61a0db2766efc3dfbc6a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766f97ce6f851cd1c3939f270351c2d5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_senha.html#a766f97ce6f851cd1c3939f270351c2d5">getSenha</a> ()</td></tr>
 <tr class="separator:a766f97ce6f851cd1c3939f270351c2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SENHA. </p>
+<h3><a class="anchor" id="autotoc_md17"></a>
+Classe Senha</h3>
+<ol type="1">
+<li><a class="el" href="class_classe.html" title="CLASSE.">Classe</a> utilizada para representar valor válido de <a class="el" href="class_senha.html" title="SENHA.">Senha</a>.</li>
+<li>Os valores aceitos são Formato XXXXXX onde cada X é dígito (0 – 9) e não há dígito repetido. </li>
+</ol>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a766f97ce6f851cd1c3939f270351c2d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a766f97ce6f851cd1c3939f270351c2d5">&#9670;&nbsp;</a></span>getSenha()</h2>
 
@@ -120,6 +132,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSenha</b> (std::st
 
 </div>
 </div>
+<a id="aaadb76fb4d61a0db2766efc3dfbc6a19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaadb76fb4d61a0db2766efc3dfbc6a19">&#9670;&nbsp;</a></span>setSenha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Senha::setSenha </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>senha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Método <b> setSenha </b>.</p>
+<ul>
+<li>Armazena valor passado como parâmetro, caso seja válido;</li>
+<li>Lança exceção caso o parâmetro passado tenha formáto inválido ou valor não aceito.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">senha</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_dominios_8h_source.html">Dominios.h</a></li>
 <li>Dominios.cpp</li>
@@ -130,7 +177,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setSenha</b> (std::st
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_senha.html">Senha</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 19:15:33 for invest by
+    <li class="footer">Generated on Tue Sep 29 2020 21:14:08 for invest by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
