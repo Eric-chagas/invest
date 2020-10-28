@@ -1,13 +1,88 @@
 #include <iostream>
 #include "Dominios.h"
 #include "TUDominios.h"
+#include "TUEntidades.h"
 
 using namespace std;
 
 int main()
 {
 
+    //Teste Classe APLICACAO
 
+    TUAplicacao* testeAplicacao = new TUAplicacao();
+
+    if(testeAplicacao->run() == true){
+        cout << "Classe \"APLICACAO\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"APLICACAO\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeAplicacao;
+
+
+    //Teste Classe CONTA
+
+    TUConta* testeConta = new TUConta();
+
+    if(testeConta->run() == true){
+        cout << "Classe \"CONTA\" testada com sucesso!" << endl;
+    }
+    else{
+        cout << "Teste de \"CONTA\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeConta;
+
+
+
+    //Teste classe PRODUTO
+
+    TUProduto* testeProduto = new TUProduto();
+
+    if(testeProduto->run() == true){
+        cout << "Classe \"PRODUTO\" testada com sucesso!" << endl;
+    }
+    else{
+        cout << "Teste de \"PRODUTO\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeProduto;
+
+
+
+    //Teste Classe USUARIO
+
+    TUUsuario* testeUsuario = new TUUsuario();
+
+    if(testeUsuario->run() == true){
+        cout << "Classe \"USUARIO\" testada com sucesso!" << endl;
+    }
+    else{
+        cout << "Teste de \"USUARIO\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeUsuario;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     //Teste classe CEP
 
     TUCep* testeCep = new TUCep();
@@ -268,8 +343,9 @@ int main()
     delete testeValor_Minimo;
 
 
-
+*/
 
     return 0;
 
 }
+

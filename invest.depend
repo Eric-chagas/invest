@@ -31,26 +31,50 @@
 	<iostream>
 	<stdexcept>
 
-1603850276 source:/home/papercut/Documentos/codeblocks/invest/main.cpp
+1603921805 source:/home/papercut/Documentos/codeblocks/invest/main.cpp
 	<iostream>
 	"Dominios.h"
 	"TUDominios.h"
+	"TUEntidades.h"
 
 1603850276 /home/papercut/Documentos/codeblocks/invest/Dominios.h
 	<iostream>
 	<stdexcept>
 
-1603850276 /home/papercut/Documentos/codeblocks/invest/TUDominios.h
+1603916243 /home/papercut/Documentos/codeblocks/invest/TUDominios.h
 	"Dominios.h"
 
 1603850276 source:/home/papercut/Documentos/codeblocks/invest/TUDominios.cpp
 	"TUDominios.h"
 
-1603850276 source:/home/papercut/Documentos/codeblocks/invest/TUDominios.h
+1603916243 source:/home/papercut/Documentos/codeblocks/invest/TUDominios.h
 	"Dominios.h"
 
 1603851723 source:/home/papercut/Documentos/codeblocks/invest/Dominios.cpp
 	"Dominios.h"
+	<iostream>
+	<stdexcept>
+	<string>
+
+1603920603 /home/papercut/Documentos/codeblocks/invest/TUEntidades.h
+	"Entidades.h"
+
+1603897672 /home/papercut/Documentos/codeblocks/invest/Entidades.h
+	"Dominios.h"
+
+1603920603 source:/home/papercut/Documentos/codeblocks/invest/TUEntidades.h
+	"Entidades.h"
+
+1603921889 source:/home/papercut/Documentos/codeblocks/invest/TUEntidades.cpp
+	"TUEntidades.h"
+	"Dominios.h"
+	"Entidades.h"
+
+1603897672 source:/home/papercut/Documentos/codeblocks/invest/Entidades.h
+	"Dominios.h"
+
+1603897452 source:/home/papercut/Documentos/codeblocks/invest/Entidades.cpp
+	"Entidades.h"
 	<iostream>
 	<stdexcept>
 	<string>

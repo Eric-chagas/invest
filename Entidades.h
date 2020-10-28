@@ -8,9 +8,9 @@
 
 class Aplicacao{
 private:
-        Codigo_Aplicacao codigo;
-        Valor_Aplicacao valor;
-        Data data;
+        Codigo_Aplicacao* codigo = new Codigo_Aplicacao();
+        Valor_Aplicacao* valor = new Valor_Aplicacao();
+        Data* data = new Data();
 public:
         void setCodigo(std::string);
         void setValor(float);
@@ -26,9 +26,9 @@ public:
 
 class Conta{
 private:
-        Codigo_Banco banco;
-        Codigo_Agencia agencia;
-        Numero numero;
+        Codigo_Banco* banco = new Codigo_Banco();
+        Codigo_Agencia* agencia = new Codigo_Agencia();
+        Numero* numero = new Numero();
 public:
         void setBanco(std::string);
         void setAgencia(std::string);
@@ -44,14 +44,14 @@ public:
 
 class Produto{
 private:
-        Codigo_Produto codigo;
-        Classe classe;
-        Emissor emissor;
-        Prazo prazo;
-        Data vencimento;
-        Taxa taxa;
-        Horario horario;
-        Valor_Minimo valor;
+        Codigo_Produto* codigo = new Codigo_Produto();
+        Classe* classe = new Classe();
+        Emissor* emissor = new Emissor();
+        Prazo* prazo = new Prazo();
+        Data* vencimento = new Data();
+        Taxa* taxa = new Taxa();
+        Horario* horario = new Horario();
+        Valor_Minimo* valor = new Valor_Minimo();
 public:
         void setCodigo(std::string);
         void setClasse(std::string);
@@ -77,11 +77,11 @@ public:
 
 class Usuario{
 private:
-        Nome nome;
-        Endereco endereco;
-        Cep cep;
-        Cpf cpf;
-        Senha senha;
+        Nome* nome = new Nome();
+        Endereco* endereco = new Endereco();
+        Cep* cep = new Cep();
+        Cpf* cpf = new Cpf();
+        Senha* senha = new Senha();
 public:
         void setNome(std::string);
         void setEndereco(std::string);
