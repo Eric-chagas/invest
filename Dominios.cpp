@@ -4,7 +4,6 @@
 #include <string>
 
 
-//Lembrar de acrescentar os comentarios doxygen.
 
 //Classe CEP
 
