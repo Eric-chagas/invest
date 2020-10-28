@@ -15,8 +15,18 @@ private:
         Aplicacao* a1;
 
         void construir();
-        void testarSucesso();
-        void testarFalha();
+
+        void testarSucessoCodigo();
+        void testarFalhaCodigo();
+
+        void testarSucessoValor();
+        void testarFalhaValor();
+
+        void testarSucessoData();
+        void testarFalhaData();
+
+        void testarMetodos();
+
         void destruir();
 public:
         bool run();
