@@ -52,6 +52,19 @@ int main()
 
 
 
+    //Teste Classe USUARIO
+
+    TUUsuario* testeUsuario = new TUUsuario();
+
+    if(testeUsuario->run() == true){
+        cout << "Classe \"USUARIO\" testada com sucesso!" << endl;
+    }
+    else{
+        cout << "Teste de \"USUARIO\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeUsuario;
+
 
 
 

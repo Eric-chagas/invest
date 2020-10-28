@@ -407,28 +407,185 @@ void TUProduto::testarFalhaValor(){
 }
 
 void TUProduto::testarMetodos(){
-    void testarSucessoCodigo();
-    void testarFalhaCodigo();
-    void testarSucessoClasse();
-    void testarFalhaClasse();
-    void testarSucessoEmissor();
-    void testarFalhaEmissor();
-    void testarSucessoPrazo();
-    void testarFalhaPrazo();
-    void testarSucessoVencimento();
-    void testarFalhaVencimento();
-    void testarSucessoTaxa();
-    void testarFalhaTaxa();
-    void testarSucessoHorario();
-    void testarFalhaHorario();
-    void testarSucessoValor();
-    void testarFalhaValor();
+    testarSucessoCodigo();
+    testarFalhaCodigo();
+    testarSucessoClasse();
+    testarFalhaClasse();
+    testarSucessoEmissor();
+    testarFalhaEmissor();
+    testarSucessoPrazo();
+    testarFalhaPrazo();
+    testarSucessoVencimento();
+    testarFalhaVencimento();
+    testarSucessoTaxa();
+    testarFalhaTaxa();
+    testarSucessoHorario();
+    testarFalhaHorario();
+    testarSucessoValor();
+    testarFalhaValor();
 }
 void TUProduto::destruir(){
     delete a1;
 }
 
 bool TUProduto::run(){
+    construir();
+    testarMetodos();
+    destruir();
+    return sucesso;
+}
+
+
+
+//Classe TUUsuario
+
+const std::string TUUsuario::NOME_VALIDO = "Jane Doe";
+const std::string TUUsuario::ENDERECO_VALIDO = "St.Johns Wood02";
+const int TUUsuario::CEP_VALIDO = 8002056;
+const std::string TUUsuario::CPF_VALIDO = "530.434.130-91";
+const std::string TUUsuario::SENHA_VALIDA = "102934";
+
+const std::string TUUsuario::NOME_INVALIDO = "E3 L3tr4";
+const std::string TUUsuario::ENDERECO_INVALIDO = "o!h d4rlng ..----  ";
+const int TUUsuario::CEP_INVALIDO = 9405010;
+const std::string TUUsuario::CPF_INVALIDO = "342.434.000-25";
+const std::string TUUsuario::SENHA_INVALIDA = "222111";
+
+void TUUsuario::construir(){
+    a1 = new Usuario();
+    sucesso = true;
+}
+
+void TUUsuario::testarSucessoNome(){
+    try {
+        a1->setNome(NOME_VALIDO);
+        if(a1->getNome() != NOME_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUUsuario::testarFalhaNome(){
+    try {
+        a1->setNome(NOME_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+
+void TUUsuario::testarSucessoEndereco(){
+    try {
+        a1->setEndereco(ENDERECO_VALIDO);
+        if(a1->getEndereco() != ENDERECO_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUUsuario::testarFalhaEndereco(){
+    try {
+        a1->setEndereco(ENDERECO_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+
+void TUUsuario::testarSucessoCep(){
+    try {
+        a1->setCep(CEP_VALIDO);
+        if(a1->getCep() != CEP_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUUsuario::testarFalhaCep(){
+    try {
+        a1->setCep(CEP_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+
+void TUUsuario::testarSucessoCpf(){
+    try {
+        a1->setCpf(CPF_VALIDO);
+        if(a1->getCpf() != CPF_VALIDO){
+            sucesso = false;
+        }
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUUsuario::testarFalhaCpf(){
+    try {
+        a1->setCpf(CPF_INVALIDO);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+
+void TUUsuario::testarSucessoSenha(){
+    try {
+        a1->setSenha(SENHA_VALIDA);
+        if(a1->getSenha() != SENHA_VALIDA){
+            sucesso = false;
+        }
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+        sucesso = false;
+    }
+}
+void TUUsuario::testarFalhaSenha(){
+    try {
+        a1->setSenha(SENHA_INVALIDA);
+        sucesso = false;
+    }
+    catch(std::invalid_argument &e){
+        descr_except = e.what();
+    }
+}
+
+void TUUsuario::testarMetodos(){
+    testarSucessoNome();
+    testarFalhaNome();
+
+    testarSucessoEndereco();
+    testarFalhaEndereco();
+
+    testarSucessoCep();
+    testarFalhaCep();
+
+    testarSucessoCpf();
+    testarFalhaCpf();
+
+    testarSucessoSenha();
+    testarFalhaSenha();
+}
+void TUUsuario::destruir(){
+    delete a1;
+}
+bool TUUsuario::run(){
     construir();
     testarMetodos();
     destruir();

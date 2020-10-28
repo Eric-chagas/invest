@@ -138,4 +138,50 @@ public:
         const char* descr_except;
 };
 
+
+//Classe TUUsuario
+
+class TUUsuario{
+private:
+        static const std::string NOME_VALIDO;
+        static const std::string ENDERECO_VALIDO;
+        static const int CEP_VALIDO;
+        static const std::string CPF_VALIDO;
+        static const std::string SENHA_VALIDA;
+
+        static const std::string NOME_INVALIDO;
+        static const std::string ENDERECO_INVALIDO;
+        static const int CEP_INVALIDO;
+        static const std::string CPF_INVALIDO;
+        static const std::string SENHA_INVALIDA;
+
+        Usuario* a1;
+
+        void construir();
+
+        void testarSucessoNome();
+        void testarFalhaNome();
+
+        void testarSucessoEndereco();
+        void testarFalhaEndereco();
+
+        void testarSucessoCep();
+        void testarFalhaCep();
+
+        void testarSucessoCpf();
+        void testarFalhaCpf();
+
+        void testarSucessoSenha();
+        void testarFalhaSenha();
+
+        void testarMetodos();
+        void destruir();
+public:
+        bool run();
+        bool sucesso;
+
+        //Armazena descricao de eventual lancamento de excecao nos testes
+        const char* descr_except;
+};
+
 #endif // TUENTIDADES_H_INCLUDED

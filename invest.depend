@@ -31,7 +31,7 @@
 	<iostream>
 	<stdexcept>
 
-1603916209 source:/home/papercut/Documentos/codeblocks/invest/main.cpp
+1603921805 source:/home/papercut/Documentos/codeblocks/invest/main.cpp
 	<iostream>
 	"Dominios.h"
 	"TUDominios.h"
@@ -56,16 +56,16 @@
 	<stdexcept>
 	<string>
 
-1603916103 /home/papercut/Documentos/codeblocks/invest/TUEntidades.h
+1603920603 /home/papercut/Documentos/codeblocks/invest/TUEntidades.h
 	"Entidades.h"
 
 1603897672 /home/papercut/Documentos/codeblocks/invest/Entidades.h
 	"Dominios.h"
 
-1603916103 source:/home/papercut/Documentos/codeblocks/invest/TUEntidades.h
+1603920603 source:/home/papercut/Documentos/codeblocks/invest/TUEntidades.h
 	"Entidades.h"
 
-1603897146 source:/home/papercut/Documentos/codeblocks/invest/TUEntidades.cpp
+1603921889 source:/home/papercut/Documentos/codeblocks/invest/TUEntidades.cpp
 	"TUEntidades.h"
 	"Dominios.h"
 	"Entidades.h"
