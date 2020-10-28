@@ -37,8 +37,16 @@
 			<Option compile="1" />
 			<Option weight="0" />
 		</Unit>
+		<Unit filename="Entidades.cpp" />
+		<Unit filename="Entidades.h">
+			<Option compile="1" />
+		</Unit>
 		<Unit filename="TUDominios.cpp" />
 		<Unit filename="TUDominios.h">
+			<Option compile="1" />
+		</Unit>
+		<Unit filename="TUEntidades.cpp" />
+		<Unit filename="TUEntidades.h">
 			<Option compile="1" />
 		</Unit>
 		<Unit filename="main.cpp" />

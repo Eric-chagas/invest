@@ -22,8 +22,33 @@ int main()
     delete testeAplicacao;
 
 
+    //Teste Classe CONTA
+
+    TUConta* testeConta = new TUConta();
+
+    if(testeConta->run() == true){
+        cout << "Classe \"CONTA\" testada com sucesso!" << endl;
+    }
+    else{
+        cout << "Teste de \"CONTA\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeConta;
 
 
+
+    //Teste classe PRODUTO
+
+    TUProduto* testeProduto = new TUProduto();
+
+    if(testeProduto->run() == true){
+        cout << "Classe \"PRODUTO\" testada com sucesso!" << endl;
+    }
+    else{
+        cout << "Teste de \"PRODUTO\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeProduto;
 
 
 
