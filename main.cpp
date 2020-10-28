@@ -1,13 +1,50 @@
 #include <iostream>
 #include "Dominios.h"
 #include "TUDominios.h"
+#include "TUEntidades.h"
 
 using namespace std;
 
 int main()
 {
 
+    //Teste Classe APLICACAO
 
+    TUAplicacao* testeAplicacao = new TUAplicacao();
+
+    if(testeAplicacao->run() == true){
+        cout << "Classe \"APLICACAO\" testada com sucesso!" << endl;
+    }
+    else {
+        cout << "Teste de \"APLICACAO\" falhou! Erro na implementação." << endl;
+    }
+
+    delete testeAplicacao;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     //Teste classe CEP
 
     TUCep* testeCep = new TUCep();
@@ -268,8 +305,9 @@ int main()
     delete testeValor_Minimo;
 
 
-
+*/
 
     return 0;
 
 }
+

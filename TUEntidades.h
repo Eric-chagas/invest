@@ -6,10 +6,10 @@
 class TUAplicacao{
 private:
         static const std::string CODIGO_VALIDO;
-        static const std::string VALOR_VALIDO;
+        static const float VALOR_VALIDO;
         static const std::string DATA_VALIDA;
         static const std::string CODIGO_INVALIDO;
-        static const std::string VALOR_INVALIDO;
+        static const float VALOR_INVALIDO;
         static const std::string DATA_INVALIDA;
 
         Aplicacao* a1;
