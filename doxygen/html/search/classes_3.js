@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['horario_75',['Horario',['../class_horario.html',1,'']]]
+  ['emissor_67',['Emissor',['../class_emissor.html',1,'']]],
+  ['endereco_68',['Endereco',['../class_endereco.html',1,'']]]
 ];
