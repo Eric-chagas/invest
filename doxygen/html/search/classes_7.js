@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['taxa_80',['Taxa',['../class_taxa.html',1,'']]],
-  ['tucep_81',['TUCep',['../class_t_u_cep.html',1,'']]],
-  ['tuclasse_82',['TUClasse',['../class_t_u_classe.html',1,'']]],
-  ['tucodigo_5fagencia_83',['TUCodigo_Agencia',['../class_t_u_codigo___agencia.html',1,'']]],
-  ['tucodigo_5faplicacao_84',['TUCodigo_Aplicacao',['../class_t_u_codigo___aplicacao.html',1,'']]],
-  ['tucodigo_5fbanco_85',['TUCodigo_Banco',['../class_t_u_codigo___banco.html',1,'']]],
-  ['tucodigo_5fproduto_86',['TUCodigo_Produto',['../class_t_u_codigo___produto.html',1,'']]],
-  ['tucpf_87',['TUCpf',['../class_t_u_cpf.html',1,'']]],
-  ['tudata_88',['TUData',['../class_t_u_data.html',1,'']]],
-  ['tuemissor_89',['TUEmissor',['../class_t_u_emissor.html',1,'']]],
-  ['tuendereco_90',['TUEndereco',['../class_t_u_endereco.html',1,'']]],
-  ['tuhorario_91',['TUHorario',['../class_t_u_horario.html',1,'']]],
-  ['tunome_92',['TUNome',['../class_t_u_nome.html',1,'']]],
-  ['tunumero_93',['TUNumero',['../class_t_u_numero.html',1,'']]],
-  ['tuprazo_94',['TUPrazo',['../class_t_u_prazo.html',1,'']]],
-  ['tusenha_95',['TUSenha',['../class_t_u_senha.html',1,'']]],
-  ['tutaxa_96',['TUTaxa',['../class_t_u_taxa.html',1,'']]],
-  ['tuvalor_5faplicacao_97',['TUValor_Aplicacao',['../class_t_u_valor___aplicacao.html',1,'']]],
-  ['tuvalor_5fminimo_98',['TUValor_Minimo',['../class_t_u_valor___minimo.html',1,'']]]
+  ['senha_74',['Senha',['../class_senha.html',1,'']]]
 ];
